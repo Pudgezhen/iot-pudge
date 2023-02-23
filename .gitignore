@@ -1,0 +1,7 @@
+# Project exclude paths
+/iot-api/iot-api-device/target/
+/iot-api/iot-api-user/target/
+/iot-common/iot-common-utils/target/
+/iot-system/iot-system-device/target/
+/iot-system/iot-system-gateway/target/
+/iot-system/iot-system-user/target/

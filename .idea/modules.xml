@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/iot-api/iot-api.iml" filepath="$PROJECT_DIR$/iot-api/iot-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-api/iot-api-device/iot-api-device.iml" filepath="$PROJECT_DIR$/iot-api/iot-api-device/iot-api-device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-api/iot-api-user/iot-api-user.iml" filepath="$PROJECT_DIR$/iot-api/iot-api-user/iot-api-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common.iml" filepath="$PROJECT_DIR$/iot-common/iot-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common-utils/iot-common-utils.iml" filepath="$PROJECT_DIR$/iot-common/iot-common-utils/iot-common-utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-parent.iml" filepath="$PROJECT_DIR$/iot-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system.iml" filepath="$PROJECT_DIR$/iot-system/iot-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-device/iot-system-device.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-device/iot-system-device.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-gateway/iot-system-gateway.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-gateway/iot-system-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-user/iot-system-user.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-user/iot-system-user.iml" />
+    </modules>
+  </component>
+</project>

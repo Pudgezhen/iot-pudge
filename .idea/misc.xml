@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-system/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-common/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-system/iot-system-user/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-api/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-api/iot-api-user/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-api/iot-api-device/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-system/iot-system-device/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-system/iot-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-common/iot-common-utils/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

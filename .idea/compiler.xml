@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="iot-system-device" />
+        <module name="iot-common-utils" />
+        <module name="iot-system-user" />
+        <module name="iot-api-user" />
+        <module name="iot-system-gateway" />
+        <module name="iot-api-device" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="iot-api" target="1.8" />
+      <module name="iot-api-device" target="1.8" />
+      <module name="iot-api-user" target="1.8" />
+      <module name="iot-common" target="1.8" />
+      <module name="iot-common-utils" target="1.8" />
+      <module name="iot-parent" target="1.8" />
+      <module name="iot-system" target="1.8" />
+      <module name="iot-system-device" target="1.8" />
+      <module name="iot-system-device (1)" target="1.8" />
+      <module name="iot-system-gateway" target="1.8" />
+      <module name="iot-system-user" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="iot-api" options="-parameters" />
+      <module name="iot-api-device" options="-parameters" />
+      <module name="iot-api-user" options="-parameters" />
+      <module name="iot-common" options="-parameters" />
+      <module name="iot-common-utils" options="-parameters" />
+      <module name="iot-system" options="" />
+      <module name="iot-system-device" options="-parameters" />
+      <module name="iot-system-device (1)" options="-parameters" />
+      <module name="iot-system-gateway" options="-parameters" />
+      <module name="iot-system-user" options="-parameters" />
+    </option>
+  </component>
+</project>

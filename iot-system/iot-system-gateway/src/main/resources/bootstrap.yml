@@ -1,0 +1,73 @@
+server:
+  port: 9003
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: iot-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.106.232:8848
+        group: iot
+        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+        username: nacos
+        password: Csjava666
+
+      config:
+        username: nacos
+        password: Csjava666
+        server-addr: 120.48.106.232:8848
+        file-extension: yaml
+        group: iot
+        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+
+    # gateway 配置
+    gateway:
+      discovery:
+        locator:
+          #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
+          enabled: true
+          #是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了
+          lowerCaseServiceId: true
+      #路由配置
+      routes:
+        - id: device   #路由id,唯一
+          uri: lb://iot-device   #负载到iot-device   服务名  lb代表开启loadBalance
+          predicates:
+            - Path=/device/** #以device开头的请求都负载到iot-device服务
+          filters:
+            # 校验
+            # 去除一个前缀
+            - RewritePath=/device/(?<segment>.*), /$\{segment} #过滤掉url里的device,例如http://ip:port/device/getCity -> http://ip:port/getCity
+
+
+
+      #跨域设置
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowed-methods: "*"
+            allowed-headers: "*"
+            allow-credentials: true
+            exposedHeaders: "Content-Disposition,Content-Type,Cache-Control"
+
+
+# 安全配置
+security:
+  # 不校验白名单
+  ignore:
+    urls:
+      - "*"
+
+
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

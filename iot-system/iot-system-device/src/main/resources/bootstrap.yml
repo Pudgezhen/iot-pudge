@@ -1,0 +1,60 @@
+#当前服务端口号
+server:
+  port: 9002
+#  servlet:
+#    #配置上下文对象  访问的项目名称
+#    context-path: /ordera
+#阿里druid连接池配置
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.106.232:8848
+        group: iot
+        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+        username: nacos
+        password: Csjava666
+      config:
+        username: nacos
+        password: Csjava666
+        server-addr: 120.48.106.232:8848
+        file-extension: yaml
+        group: iot
+        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+
+  datasource:
+    druid:
+      url: jdbc:mysql://120.48.106.232:3306/iot?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      initial-size: 5
+      max-active: 20
+      min-idle: 10
+      max-wait: 10
+
+  application:
+    name: iot-device
+  profiles:
+    active: dev
+
+
+mybatis-plus:
+  # mapper.xml配置
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    #控制台日志输出配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #别名包配置
+  type-aliases-package: com.aaa.os.entity
+####swagger配置
+#swagger:
+#  base-package: com.aaa.os.controller
+#  title: "物联网-用户模块-swagger"
+#  description: "描述"
+#  version: "3.0"
+#  contact:
+#    name: "muzhen"
+#    email: "test@163.com"
+#    url: "https://www.baidu.com"
+#  terms-of-service-url: "服务条款：https://www.baidu.com"
+
