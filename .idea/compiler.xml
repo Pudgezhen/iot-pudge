@@ -11,6 +11,7 @@
         <module name="iot-common-utils" />
         <module name="iot-system-user" />
         <module name="iot-system-gateway" />
+        <module name="iot-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,6 +20,7 @@
       <module name="iot-api-user" target="1.8" />
       <module name="iot-common" target="1.8" />
       <module name="iot-common-utils" target="1.8" />
+      <module name="iot-generator" target="1.8" />
       <module name="iot-parent" target="1.8" />
       <module name="iot-system" target="1.8" />
       <module name="iot-system-device" target="1.8" />
@@ -34,6 +36,7 @@
       <module name="iot-api-user" options="-parameters" />
       <module name="iot-common" options="-parameters" />
       <module name="iot-common-utils" options="-parameters" />
+      <module name="iot-generator" options="-parameters" />
       <module name="iot-system" options="" />
       <module name="iot-system-device" options="-parameters" />
       <module name="iot-system-device (1)" options="-parameters" />

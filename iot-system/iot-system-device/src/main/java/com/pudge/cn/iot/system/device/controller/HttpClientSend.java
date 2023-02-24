@@ -1,14 +1,3 @@
-/**
- * 中国邮政新一代寄递平台 <br/>
- * <br/>
- * 子系统名: <br/>
- * 模 块 名: <br/>
- * 文件名称: HttpClientSend.java <br/>
- * 创建日期: 2018年1月16日下午7:08:02 <br/>
- * 创 建 人: Administrator <br/>
- * 版权所有: 2018 中国邮政集团公司 保留所有权利 <br/>
- */
-
 package com.pudge.cn.iot.system.device.controller;
 
 
@@ -16,8 +5,6 @@ import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.*;
 import org.apache.http.client.HttpClient;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
@@ -30,14 +17,12 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.*;
-import java.util.Map.Entry;
 
 /**
  * 名称：类的中文名称 <br>
@@ -45,7 +30,6 @@ import java.util.Map.Entry;
  * <br/>
  * 
  * @since JDK 1.7
- * @see
  * @author Administrator
  */
 @Slf4j
