@@ -38,9 +38,11 @@
         <mysql.version>8.0.11</mysql.version>
         <lombok.version>1.18.22</lombok.version>
         <druid.version>1.1.10</druid.version>
-        <pagehelper.version>1.4.1</pagehelper.version>
+        <pagehelper.version>1.2.5</pagehelper.version>
         <spring-boot-openfeign>2.2.1.RELEASE</spring-boot-openfeign>
         <poi-version>3.15</poi-version>
+        <generator.version>1.4.0</generator.version>
+        <redis.version>2.7.0</redis.version>
     </properties>
 
 
@@ -94,6 +96,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${redis.version}</version>
+            </dependency>
+
             <!--springboot整合mybatis包-->
             <dependency>
                 <groupId>org.mybatis.spring.boot</groupId>
@@ -147,6 +156,13 @@
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper-spring-boot-starter</artifactId>
                 <version>${pagehelper.version}</version>
+            </dependency>
+
+            <!-- Mybatis 代码生成 -->
+            <dependency>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-core</artifactId>
+                <version>${generator.version}</version>
             </dependency>
 
             <!-- swagger2 -->

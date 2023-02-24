@@ -11,8 +11,8 @@
     <artifactId>iot-api-device</artifactId>
     <version>0.1</version>
     <name>iot-api-device</name>
-    <description>Demo project for Spring Boot</description>
-
+    <description>device 的api工程</description>
+    <packaging>pom</packaging>
     <dependencies>
         <dependency>
             <groupId>com.pudge.cn</groupId>

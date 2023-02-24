@@ -24,7 +24,7 @@ spring:
 
   datasource:
     druid:
-      url: jdbc:mysql://120.48.106.232:3306/iot?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://127.0.0.1:3306/iot?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
       username: root
       password: 123456
       initial-size: 5
@@ -44,8 +44,11 @@ mybatis-plus:
   configuration:
     #控制台日志输出配置
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #下划线转驼峰
+    map-underscore-to-camel-case: true
   #别名包配置
   type-aliases-package: com.aaa.os.entity
+
 ####swagger配置
 #swagger:
 #  base-package: com.aaa.os.controller

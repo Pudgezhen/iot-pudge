@@ -25,6 +25,7 @@ import java.util.Map;
 public class HaiHangServiceImpl implements IQpsHaiHangService {
     @Override
     public Map<String, Object> queryHaiHang(String tranceNos) throws IOException {
+
         log.info("海航查询start-0-----------------"+ tranceNos);
         String[] tranceNoArr = tranceNos.split(",");
         Map<String,Object> map = new HashMap<>();

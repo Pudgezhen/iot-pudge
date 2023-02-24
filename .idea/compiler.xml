@@ -10,9 +10,7 @@
         <module name="iot-system-device" />
         <module name="iot-common-utils" />
         <module name="iot-system-user" />
-        <module name="iot-api-user" />
         <module name="iot-system-gateway" />
-        <module name="iot-api-device" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
