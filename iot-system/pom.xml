@@ -3,23 +3,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>iot-pratent</artifactId>
         <groupId>com.pudge.cn</groupId>
+        <artifactId>iot-parent</artifactId>
         <version>0.1</version>
     </parent>
-
-    <modules>
-        <module>iot-system-user</module>
-        <module>iot-system-device</module>
-        <module>iot-system-gateway</module>
-    </modules>
-
     <groupId>com.pudge.cn</groupId>
     <artifactId>iot-system</artifactId>
-    <version>0.1</version>
     <packaging>pom</packaging>
+    <version>0.1</version>
     <name>iot-system</name>
-    <description>IoT 系统工程</description>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>
@@ -42,9 +35,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
-
     </dependencies>
-
-
 
 </project>

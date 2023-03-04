@@ -175,7 +175,7 @@ public class ExcelOperation {
      * @return  返回一个Excel
      * @throws IllegalAccessException 字段取值异常
      */
-    public static HSSFWorkbook exportExcelSheets(Class clazz, Map<String,List<Object>> dataMap, Map<Integer, String[]> selectListMap) throws IllegalAccessException {
+    public static HSSFWorkbook exportExcelSheets(Class clazz, Map<String, List<Object>> dataMap, Map<Integer, String[]> selectListMap) throws IllegalAccessException {
         //1. 创建一个工作簿
         HSSFWorkbook workbook = new HSSFWorkbook();
         //2. 建立一张sheet表

@@ -6,6 +6,10 @@ server:
 #    context-path: /ordera
 #阿里druid连接池配置
 spring:
+  boot:
+    admin:
+      client:
+        url: 127.0.0.1:9003
   cloud:
     nacos:
       discovery:
@@ -61,3 +65,9 @@ mybatis-plus:
 #    url: "https://www.baidu.com"
 #  terms-of-service-url: "服务条款：https://www.baidu.com"
 
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

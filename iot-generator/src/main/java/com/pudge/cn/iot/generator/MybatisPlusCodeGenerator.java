@@ -28,11 +28,11 @@ public class MybatisPlusCodeGenerator {
         String moduleName="iot-generator";
         //数据库配置
         String url="jdbc:mysql://127.0.0.1:3306/iot?useSSL=false&characterEncoding=utf8&serverTimezone=UTC";
-        String driverClassName="com.mysql.jdbc.Driver";//或者com.mysql.cj.jdbc.Driver
+        String driverClassName="com.mysql.cj.jdbc.Driver";//或者com.mysql.cj.jdbc.Driver
         String username="root";
         String password="123456";
-        String tableNames="test";//表名，多个使用,分隔
-        //====================配置变量区域=====================//
+        String tableNames="iot_role_permission_relation";//表名，多个使用,分隔
+        //====================配置变量区域=====================//iot_admin,iot_role,iot_permission,iot_admin_role_relation,iot_admin_permission_relation,iot_role_permission_relation
 
         // 代码生成器
         AutoGenerator generator = new AutoGenerator();

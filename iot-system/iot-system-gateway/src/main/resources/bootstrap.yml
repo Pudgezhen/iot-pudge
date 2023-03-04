@@ -23,7 +23,10 @@ spring:
         file-extension: yaml
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
-
+    sentinel:
+      eager: true
+      transport:
+        dashboard: 127.0.0.1:8999
     # gateway 配置
     gateway:
       discovery:
@@ -41,8 +44,15 @@ spring:
           filters:
             # 校验
             # 去除一个前缀
-            - RewritePath=/device/(?<segment>.*), /$\{segment} #过滤掉url里的device,例如http://ip:port/device/getCity -> http://ip:port/getCity
-
+            - StripPrefix=1
+        - id: user   #路由id,唯一
+          uri: lb://iot-user   #负载到iot-device   服务名  lb代表开启loadBalance
+          predicates:
+            - Path=/user/** #以device开头的请求都负载到iot-device服务
+          filters:
+            # 校验
+            # 去除一个前缀
+            - StripPrefix=1
 
 
       #跨域设置
@@ -58,10 +68,31 @@ spring:
 
 # 安全配置
 security:
-  # 不校验白名单
-  ignore:
+  ignore: # 配置白名单
     urls:
-      - "*"
+      urls: #配置白名单路径
+        - "/doc.html"
+        - "/swagger-resources/**"
+        - "/swagger/**"
+        - "/*/v2/api-docs"
+        - "/*/*.js"
+        - "/*/*.css"
+        - "/*/*.png"
+        - "/*/*.ico"
+        - "/webjars/**"
+        - "/actuator/**"
+        - "/mall-auth/oauth/token"
+        - "/mall-auth/rsa/publicKey"
+        - "/mall-search/**"
+        - "/mall-portal/sso/login"
+        - "/mall-portal/sso/register"
+        - "/mall-portal/sso/getAuthCode"
+        - "/mall-portal/home/**"
+        - "/mall-portal/product/**"
+        - "/mall-portal/brand/**"
+        - "/mall-admin/admin/login"
+        - "/mall-admin/admin/register"
+        - "/mall-admin/minio/upload"
 
 
 

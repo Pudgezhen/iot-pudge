@@ -18,6 +18,12 @@ public class RedisServiceImpl implements RedisService {
     @Autowired
     private RedisTemplate<String, Object> redisTemplate;
 
+    /**
+     *  添加缓存：String  ，超时单位：s
+     * @param key key
+     * @param value value
+     * @param time 超时时间s
+     */
     @Override
     public void set(String key, Object value, long time) {
         redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);

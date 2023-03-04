@@ -4,7 +4,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/iot-system/pom.xml" />
         <option value="$PROJECT_DIR$/iot-common/pom.xml" />
         <option value="$PROJECT_DIR$/iot-system/iot-system-user/pom.xml" />
         <option value="$PROJECT_DIR$/iot-api/pom.xml" />
@@ -14,6 +13,8 @@
         <option value="$PROJECT_DIR$/iot-system/iot-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/iot-common/iot-common-utils/pom.xml" />
         <option value="$PROJECT_DIR$/iot-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-system/iot-system-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-system/iot-system-gateway/pom.xml" />
       </list>
     </option>
   </component>

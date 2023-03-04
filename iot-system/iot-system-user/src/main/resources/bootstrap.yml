@@ -8,7 +8,10 @@ server:
 spring:
   application:
     name: iot-user
-
+  boot:
+    admin:
+      client:
+        url: 127.0.0.1:9002
 
   cloud:
     nacos:
@@ -75,3 +78,9 @@ mybatis-plus:
 #    url: "https://www.baidu.com"
 #  terms-of-service-url: "服务条款：https://www.baidu.com"
 
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

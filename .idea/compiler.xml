@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="iot-system-gateway" />
         <module name="iot-system-device" />
         <module name="iot-common-utils" />
         <module name="iot-system-user" />
-        <module name="iot-system-gateway" />
         <module name="iot-generator" />
+        <module name="iot-system-monitor" />
+        <module name="iot-system-auth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,9 +25,11 @@
       <module name="iot-generator" target="1.8" />
       <module name="iot-parent" target="1.8" />
       <module name="iot-system" target="1.8" />
+      <module name="iot-system-auth" target="1.8" />
       <module name="iot-system-device" target="1.8" />
       <module name="iot-system-device (1)" target="1.8" />
       <module name="iot-system-gateway" target="1.8" />
+      <module name="iot-system-monitor" target="17" />
       <module name="iot-system-user" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -37,10 +41,12 @@
       <module name="iot-common" options="-parameters" />
       <module name="iot-common-utils" options="-parameters" />
       <module name="iot-generator" options="-parameters" />
-      <module name="iot-system" options="" />
+      <module name="iot-system" options="-parameters" />
+      <module name="iot-system-auth" options="-parameters" />
       <module name="iot-system-device" options="-parameters" />
       <module name="iot-system-device (1)" options="-parameters" />
       <module name="iot-system-gateway" options="-parameters" />
+      <module name="iot-system-monitor" options="-parameters" />
       <module name="iot-system-user" options="-parameters" />
     </option>
   </component>
