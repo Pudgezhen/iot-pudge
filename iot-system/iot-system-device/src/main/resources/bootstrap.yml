@@ -9,7 +9,7 @@ spring:
   boot:
     admin:
       client:
-        url: 127.0.0.1:9003
+        url: 127.0.0.1:9005
   cloud:
     nacos:
       discovery:
