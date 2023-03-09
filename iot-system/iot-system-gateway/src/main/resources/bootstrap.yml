@@ -6,6 +6,11 @@ spring:
     active: dev
   application:
     name: iot-gateway
+  boot:
+    admin:
+      client:
+        url: 127.0.0.1:9005
+
 
   cloud:
     nacos:
@@ -67,34 +72,31 @@ spring:
 
 
 # 安全配置
-security:
-  ignore: # 配置白名单
-    urls:
-      urls: #配置白名单路径
-        - "/doc.html"
-        - "/swagger-resources/**"
-        - "/swagger/**"
-        - "/*/v2/api-docs"
-        - "/*/*.js"
-        - "/*/*.css"
-        - "/*/*.png"
-        - "/*/*.ico"
-        - "/webjars/**"
-        - "/actuator/**"
-        - "/mall-auth/oauth/token"
-        - "/mall-auth/rsa/publicKey"
-        - "/mall-search/**"
-        - "/mall-portal/sso/login"
-        - "/mall-portal/sso/register"
-        - "/mall-portal/sso/getAuthCode"
-        - "/mall-portal/home/**"
-        - "/mall-portal/product/**"
-        - "/mall-portal/brand/**"
-        - "/mall-admin/admin/login"
-        - "/mall-admin/admin/register"
-        - "/mall-admin/minio/upload"
-
-
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/doc.html"
+      - "/swagger-resources/**"
+      - "/swagger/**"
+      - "/*/v2/api-docs"
+      - "/*/*.js"
+      - "/*/*.css"
+      - "/*/*.png"
+      - "/*/*.ico"
+      - "/webjars/**"
+      - "/actuator/**"
+      - "/mall-auth/oauth/token"
+      - "/mall-auth/rsa/publicKey"
+      - "/mall-search/**"
+      - "/mall-portal/sso/login"
+      - "/mall-portal/sso/register"
+      - "/mall-portal/sso/getAuthCode"
+      - "/mall-portal/home/**"
+      - "/mall-portal/product/**"
+      - "/mall-portal/brand/**"
+      - "/mall-admin/admin/login"
+      - "/mall-admin/admin/register"
+      - "/mall-admin/minio/upload"
 
 # 暴露监控端点
 management:
@@ -102,3 +104,6 @@ management:
     web:
       exposure:
         include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS

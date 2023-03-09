@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-auth/iot-system-auth.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-auth/iot-system-auth.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-device/iot-system-device.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-device/iot-system-device.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-gateway/iot-system-gateway.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-gateway/iot-system-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-monitor/iot-system-monitor.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-monitor/iot-system-monitor.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-system/iot-system-user/iot-system-user.iml" filepath="$PROJECT_DIR$/iot-system/iot-system-user/iot-system-user.iml" />
     </modules>
   </component>

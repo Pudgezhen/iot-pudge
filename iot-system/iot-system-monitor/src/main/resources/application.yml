@@ -1,0 +1,41 @@
+#当前服务端口号
+server:
+  port: 9005
+#  servlet:
+#    #配置上下文对象  访问的项目名称
+#    context-path: /ordera
+#阿里druid连接池配置
+spring:
+  application:
+    name: iot-monitor
+  security:
+    user:
+      name: pudge
+      password: 123456
+
+  boot:
+    admin:
+      discovery:
+        ignored-services: ${spring.application.name}
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 120.48.106.232:8848
+        group: iot
+        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+        username: nacos
+        password: Csjava666
+      config:
+        username: nacos
+        password: Csjava666
+        server-addr: 120.48.106.232:8848
+        file-extension: yaml
+        group: iot
+        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+
+
+  profiles:
+    active: dev
+
+

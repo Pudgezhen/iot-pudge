@@ -29,7 +29,7 @@
       <module name="iot-system-device" target="1.8" />
       <module name="iot-system-device (1)" target="1.8" />
       <module name="iot-system-gateway" target="1.8" />
-      <module name="iot-system-monitor" target="17" />
+      <module name="iot-system-monitor" target="1.8" />
       <module name="iot-system-user" target="1.8" />
     </bytecodeTargetLevel>
   </component>

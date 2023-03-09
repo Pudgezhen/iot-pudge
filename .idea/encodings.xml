@@ -13,6 +13,8 @@
     <file url="file://$PROJECT_DIR$/iot-system/iot-system-device/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iot-system/iot-system-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iot-system/iot-system-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iot-system/iot-system-monitor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/iot-system/iot-system-monitor/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iot-system/iot-system-user/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/iot-system/iot-system-user/src/main/resources" charset="UTF-8" />
   </component>
