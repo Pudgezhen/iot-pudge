@@ -33,5 +33,6 @@
       <option name="myAdditionalJavadocTags" value="description,Date" />
     </inspection_tool>
     <inspection_tool class="SpringJavaAutowiredFieldsWarningInspection" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="SpringJavaInjectionPointsAutowiringInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   </profile>
 </component>
