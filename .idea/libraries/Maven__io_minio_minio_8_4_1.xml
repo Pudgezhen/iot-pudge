@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: io.minio:minio:8.4.1">
+    <CLASSES>
+      <root url="jar://D:/maven/apache-maven-3.6.3/repos/io/minio/minio/8.4.1/minio-8.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/maven/apache-maven-3.6.3/repos/io/minio/minio/8.4.1/minio-8.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/maven/apache-maven-3.6.3/repos/io/minio/minio/8.4.1/minio-8.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

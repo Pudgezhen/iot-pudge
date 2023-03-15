@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.common.exception;
 
 
-import com.pudge.cn.iot.common.response.CommonResult;
+import com.pudge.cn.iot.common.response.PudResult;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -19,16 +19,16 @@ public class GlobalExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(value = ApiException.class)
-    public CommonResult handle(ApiException e) {
+    public PudResult handle(ApiException e) {
         if (e.getErrorCode() != null) {
-            return CommonResult.failed(e.getErrorCode());
+            return PudResult.failed(e.getErrorCode());
         }
-        return CommonResult.failed(e.getMessage());
+        return PudResult.failed(e.getMessage());
     }
 
     @ResponseBody
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    public CommonResult handleValidException(MethodArgumentNotValidException e) {
+    public PudResult handleValidException(MethodArgumentNotValidException e) {
         BindingResult bindingResult = e.getBindingResult();
         String message = null;
         if (bindingResult.hasErrors()) {
@@ -37,12 +37,12 @@ public class GlobalExceptionHandler {
                 message = fieldError.getField()+fieldError.getDefaultMessage();
             }
         }
-        return CommonResult.validateFailed(message);
+        return PudResult.validateFailed(message);
     }
 
     @ResponseBody
     @ExceptionHandler(value = BindException.class)
-    public CommonResult handleValidException(BindException e) {
+    public PudResult handleValidException(BindException e) {
         BindingResult bindingResult = e.getBindingResult();
         String message = null;
         if (bindingResult.hasErrors()) {
@@ -51,6 +51,6 @@ public class GlobalExceptionHandler {
                 message = fieldError.getField()+fieldError.getDefaultMessage();
             }
         }
-        return CommonResult.validateFailed(message);
+        return PudResult.validateFailed(message);
     }
 }

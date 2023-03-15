@@ -3,7 +3,7 @@
 <mapper namespace="com.pudge.cn.iot.system.user.mapper.UserInfoMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.pudge.cn.iot.system.user.entity.UserInfo">
+    <resultMap id="BaseResultMap" type="com.pudge.cn.iot.api.user.entity.UserInfo">
         <id column="username" property="username" />
         <result column="password" property="password" />
         <result column="phone" property="phone" />

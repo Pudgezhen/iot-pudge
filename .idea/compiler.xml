@@ -7,20 +7,27 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="iot-common-log" />
         <module name="iot-system-gateway" />
         <module name="iot-system-device" />
         <module name="iot-common-utils" />
         <module name="iot-system-user" />
         <module name="iot-generator" />
         <module name="iot-system-monitor" />
+        <module name="iot-common-file" />
         <module name="iot-system-auth" />
+        <module name="common-elasticsearch" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common-elasticsearch" target="1.8" />
       <module name="iot-api" target="1.8" />
       <module name="iot-api-device" target="1.8" />
       <module name="iot-api-user" target="1.8" />
       <module name="iot-common" target="1.8" />
+      <module name="iot-common-dependencies" target="1.8" />
+      <module name="iot-common-file" target="8" />
+      <module name="iot-common-log" target="8" />
       <module name="iot-common-utils" target="1.8" />
       <module name="iot-generator" target="1.8" />
       <module name="iot-parent" target="1.8" />
@@ -39,6 +46,9 @@
       <module name="iot-api-device" options="-parameters" />
       <module name="iot-api-user" options="-parameters" />
       <module name="iot-common" options="-parameters" />
+      <module name="iot-common-dependencies" options="-parameters" />
+      <module name="iot-common-file" options="-parameters" />
+      <module name="iot-common-log" options="-parameters" />
       <module name="iot-common-utils" options="-parameters" />
       <module name="iot-generator" options="-parameters" />
       <module name="iot-system" options="-parameters" />

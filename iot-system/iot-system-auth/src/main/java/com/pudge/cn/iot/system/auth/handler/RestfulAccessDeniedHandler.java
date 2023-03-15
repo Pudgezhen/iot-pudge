@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.system.auth.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.pudge.cn.iot.common.response.CommonResult;
+import com.pudge.cn.iot.common.response.PudResult;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -24,7 +24,7 @@ public class RestfulAccessDeniedHandler implements AccessDeniedHandler {
                        AccessDeniedException e) throws IOException, ServletException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
-        response.getWriter().println(JSONUtil.parse(CommonResult.forbidden(e.getMessage())));
+        response.getWriter().println(JSONUtil.parse(PudResult.forbidden(e.getMessage())));
         response.getWriter().flush();
     }
 }

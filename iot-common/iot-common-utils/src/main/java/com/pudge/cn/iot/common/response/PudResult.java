@@ -5,15 +5,15 @@ package com.pudge.cn.iot.common.response;
  * @description
  * @Date 2023/2/23 16:50
  */
-public class CommonResult<T> {
+public class PudResult<T> {
     private long code;
     private String message;
     private T data;
 
-    protected CommonResult() {
+    protected PudResult() {
     }
 
-    protected CommonResult(long code, String message, T data) {
+    protected PudResult(long code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -24,8 +24,8 @@ public class CommonResult<T> {
      *
      * @param data 获取的数据
      */
-    public static <T> CommonResult<T> success(T data) {
-        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
+    public static <T> PudResult<T> success(T data) {
+        return new PudResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
 
     /**
@@ -34,16 +34,16 @@ public class CommonResult<T> {
      * @param data 获取的数据
      * @param  message 提示信息
      */
-    public static <T> CommonResult<T> success(T data, String message) {
-        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message, data);
+    public static <T> PudResult<T> success(T data, String message) {
+        return new PudResult<T>(ResultCode.SUCCESS.getCode(), message, data);
     }
 
     /**
      * 失败返回结果
      * @param errorCode 错误码
      */
-    public static <T> CommonResult<T> failed(IErrorCode errorCode) {
-        return new CommonResult<T>(errorCode.getCode(), errorCode.getMessage(), null);
+    public static <T> PudResult<T> failed(IErrorCode errorCode) {
+        return new PudResult<T>(errorCode.getCode(), errorCode.getMessage(), null);
     }
 
     /**
@@ -51,29 +51,29 @@ public class CommonResult<T> {
      * @param errorCode 错误码
      * @param message 错误信息
      */
-    public static <T> CommonResult<T> failed(IErrorCode errorCode,String message) {
-        return new CommonResult<T>(errorCode.getCode(), message, null);
+    public static <T> PudResult<T> failed(IErrorCode errorCode, String message) {
+        return new PudResult<T>(errorCode.getCode(), message, null);
     }
 
     /**
      * 失败返回结果
      * @param message 提示信息
      */
-    public static <T> CommonResult<T> failed(String message) {
-        return new CommonResult<T>(ResultCode.FAILED.getCode(), message, null);
+    public static <T> PudResult<T> failed(String message) {
+        return new PudResult<T>(ResultCode.FAILED.getCode(), message, null);
     }
 
     /**
      * 失败返回结果
      */
-    public static <T> CommonResult<T> failed() {
+    public static <T> PudResult<T> failed() {
         return failed(ResultCode.FAILED);
     }
 
     /**
      * 参数验证失败返回结果
      */
-    public static <T> CommonResult<T> validateFailed() {
+    public static <T> PudResult<T> validateFailed() {
         return failed(ResultCode.VALIDATE_FAILED);
     }
 
@@ -81,22 +81,22 @@ public class CommonResult<T> {
      * 参数验证失败返回结果
      * @param message 提示信息
      */
-    public static <T> CommonResult<T> validateFailed(String message) {
-        return new CommonResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
+    public static <T> PudResult<T> validateFailed(String message) {
+        return new PudResult<T>(ResultCode.VALIDATE_FAILED.getCode(), message, null);
     }
 
     /**
      * 未登录返回结果
      */
-    public static <T> CommonResult<T> unauthorized(T data) {
-        return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
+    public static <T> PudResult<T> unauthorized(T data) {
+        return new PudResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**
      * 未授权返回结果
      */
-    public static <T> CommonResult<T> forbidden(T data) {
-        return new CommonResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
+    public static <T> PudResult<T> forbidden(T data) {
+        return new PudResult<T>(ResultCode.FORBIDDEN.getCode(), ResultCode.FORBIDDEN.getMessage(), data);
     }
 
     public long getCode() {

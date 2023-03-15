@@ -10,7 +10,6 @@
     <modules>
         <module>iot-api-user</module>
     </modules>
-    <groupId>com.pudge.cn</groupId>
     <artifactId>iot-api</artifactId>
     <version>0.1</version>
     <name>iot-api</name>
@@ -28,6 +27,8 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <scope>provided</scope>
         </dependency>
+
+
     </dependencies>
 
 

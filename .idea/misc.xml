@@ -16,6 +16,10 @@
         <option value="$PROJECT_DIR$/iot-system/iot-system-auth/pom.xml" />
         <option value="$PROJECT_DIR$/iot-system/iot-system-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/iot-system/iot-system-monitor/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-common/iot-common-log/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-common/iot-common-elasticsearch/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-common/iot-common-file/pom.xml" />
+        <option value="$PROJECT_DIR$/iot-common/iot-common-dependencies/pom.xml" />
       </list>
     </option>
   </component>

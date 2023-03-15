@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common-elasticsearch/common-elasticsearch.iml" filepath="$PROJECT_DIR$/iot-common/iot-common-elasticsearch/common-elasticsearch.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-api/iot-api.iml" filepath="$PROJECT_DIR$/iot-api/iot-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-api/iot-api-device/iot-api-device.iml" filepath="$PROJECT_DIR$/iot-api/iot-api-device/iot-api-device.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-api/iot-api-user/iot-api-user.iml" filepath="$PROJECT_DIR$/iot-api/iot-api-user/iot-api-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common.iml" filepath="$PROJECT_DIR$/iot-common/iot-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common-dependencies/iot-common-dependencies.iml" filepath="$PROJECT_DIR$/iot-common/iot-common-dependencies/iot-common-dependencies.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common-file/iot-common-file.iml" filepath="$PROJECT_DIR$/iot-common/iot-common-file/iot-common-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common-log/iot-common-log.iml" filepath="$PROJECT_DIR$/iot-common/iot-common-log/iot-common-log.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-common/iot-common-utils/iot-common-utils.iml" filepath="$PROJECT_DIR$/iot-common/iot-common-utils/iot-common-utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-generator/iot-generator.iml" filepath="$PROJECT_DIR$/iot-generator/iot-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/iot-parent.iml" filepath="$PROJECT_DIR$/iot-parent.iml" />

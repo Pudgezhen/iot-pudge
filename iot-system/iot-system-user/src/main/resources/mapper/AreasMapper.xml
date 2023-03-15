@@ -3,7 +3,7 @@
 <mapper namespace="com.pudge.cn.iot.system.user.mapper.AreasMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.pudge.cn.iot.system.user.entity.Areas">
+    <resultMap id="BaseResultMap" type="com.pudge.cn.iot.api.user.entity.Areas">
         <id column="areaid" property="areaid" />
         <result column="area" property="area" />
         <result column="cityid" property="cityid" />

@@ -2,6 +2,7 @@ package com.pudge.cn.iot.system.user.mapper;
 
 import com.pudge.cn.iot.api.user.entity.Areas;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author pudge
  * @since 2023-03-15
  */
+@Mapper
 public interface AreasMapper extends BaseMapper<Areas> {
 
 }
