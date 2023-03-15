@@ -17,7 +17,6 @@ import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
  * @Date 2023/2/24 15:00
  */
 
-// TODO 目前只支持空的各个类，需要再增加自定义配置满足需要
 //执行 main 方法，控制台输入模块表名，回车自动生成对应项目目录中
 public class MybatisPlusCodeGenerator {
 
