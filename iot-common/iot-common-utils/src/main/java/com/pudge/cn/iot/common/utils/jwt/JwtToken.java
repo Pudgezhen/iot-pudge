@@ -20,7 +20,7 @@ import java.util.Map;
 
 public class JwtToken {
     //默认秘钥
-    private static final String DEFAULT_SECRET="springcloudalibaba";
+    private static final String DEFAULT_SECRET="iotPudgeJwtDefaultSecret";
 
     /***
      * 生成令牌
@@ -46,10 +46,10 @@ public class JwtToken {
         //创建令牌
         return JWT.create()
                 .withClaim("body",dataMap)
-                .withIssuer("GP")            //JWT签发者
+                .withIssuer("pudge")            //JWT签发者
                 .withSubject("JWT令牌")       //主题
                 .withAudience("member")      //接收JWT的一方
-                .withExpiresAt(new Date(System.currentTimeMillis()+3600000))    //过期时间
+                .withExpiresAt(new Date(System.currentTimeMillis()+3600000))    //过期时间   ms
                 .withNotBefore(new Date(System.currentTimeMillis()))      //指定时间之前JWT令牌是不可用的
                 .withIssuedAt(new Date())    //JWT签发时间
                 .withJWTId(UUID.randomUUID().toString().replace("-","")) // jwt唯一标识
@@ -75,8 +75,11 @@ public class JwtToken {
         if(StringUtils.isEmpty(secret)){
             secret = DEFAULT_SECRET;
         }
+        //确认签名算法
         Algorithm algorithm = Algorithm.HMAC256(secret);
-        JWTVerifier verifier = JWT.require(algorithm).build(); //Reusable verifier instance
+        //创建令牌校验对象
+        JWTVerifier verifier = JWT.require(algorithm).build();
+        //校验解析
         DecodedJWT jwt = verifier.verify(token);
         return jwt.getClaim("body").as(Map.class);
     }

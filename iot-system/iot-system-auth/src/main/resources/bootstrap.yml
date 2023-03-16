@@ -47,7 +47,7 @@ mybatis-plus:
     #下划线转驼峰
     map-underscore-to-camel-case: true
   #别名包配置
-  type-aliases-package: com.aaa.os.entity
+  type-aliases-package: com.pudge.cn.iot.api.*.pojo
 
 ####swagger配置
 #swagger:

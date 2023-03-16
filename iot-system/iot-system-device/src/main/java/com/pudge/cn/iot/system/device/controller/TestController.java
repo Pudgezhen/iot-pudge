@@ -4,7 +4,6 @@ package com.pudge.cn.iot.system.device.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.pudge.cn.iot.api.device.pojo.HaiHang;
 import com.pudge.cn.iot.api.device.pojo.QpsHaiHangVo;
-import com.pudge.cn.iot.api.user.services.TestService;
 import com.pudge.cn.iot.common.utils.excel.operation.ExcelOperation;
 import com.pudge.cn.iot.system.device.service.IQpsHaiHangService;
 import io.swagger.annotations.Api;
@@ -26,8 +25,6 @@ import java.util.*;
 @Api(value = "测试接口", tags = "设备管理接口")
 public class TestController {
 
-    @Autowired
-    private TestService testService;
 
 
 
@@ -38,7 +35,7 @@ public class TestController {
     @ApiOperation(value = "测试获取", notes = "测试Get")
     public String test() {
 
-        return testService.test(name);
+        return "ok";
     }
 
 //    @RequestMapping("/testExcel")

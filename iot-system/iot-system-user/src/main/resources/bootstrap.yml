@@ -13,6 +13,10 @@ spring:
       client:
         url: 127.0.0.1:9005
 
+  redis:
+    port: 6379
+    host: 120.48.106.232
+
   cloud:
     nacos:
       discovery:
@@ -31,9 +35,9 @@ spring:
 
   datasource:
     druid:
-      url: jdbc:mysql://120.48.106.232:3306/iot_user?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://120.48.106.232:13306/iot_user?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
       username: root
-      password: 123456
+      password: CsPudge666
       # 初始化连接池大小，默认值：0
       # 建议与 minIdle 大小保持一致
       initial-size: 5

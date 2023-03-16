@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.pudge.cn</groupId>
-    <artifactId>iot-parent</artifactId>
+    <artifactId>iot-pudge</artifactId>
     <version>0.1</version>
     <name>iot-parent</name>
     <description>iot父工程</description>
