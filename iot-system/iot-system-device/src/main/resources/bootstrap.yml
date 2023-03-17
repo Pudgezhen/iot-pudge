@@ -42,8 +42,9 @@ spring:
     active: dev
 
   redis:
-    port: 6379
+    port: 16379
     host: 120.48.106.232
+    password: CsPudge666
 
 
 mybatis-plus:

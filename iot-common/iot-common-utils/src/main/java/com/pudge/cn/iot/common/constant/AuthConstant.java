@@ -51,4 +51,8 @@ public interface AuthConstant {
      */
     String USER_TOKEN_HEADER = "user";
 
+    /**
+     *  用户JWT令牌在redis的前缀
+     */
+    String JWT_REDIS_PREFIX = "jwt:";
 }
