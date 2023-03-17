@@ -16,7 +16,6 @@ import java.io.OutputStreamWriter;
 import java.math.BigInteger;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -39,22 +38,22 @@ public class TestDouYinController {
         Map<String, Object> jsonMap = new TreeMap<>();
         Map<String, Object> param = new HashMap<>();
         jsonMap.put("bizType", "COURIER_STATION");
-        jsonMap.put("orderId", "123456789");
+        jsonMap.put("orderId", "75908704939244");
         jsonMap.put("cancelCode", "10803");
         jsonMap.put("cancelReason", "消费者取消寄件");
         jsonMap.put("status", "Canceled");
         jsonMap.put("operationTime", "2023-01-19 15:12:23");
         jsonMap.put("partnerCode", "youzhengguonei");
         jsonMap.put("brandCode", "youzhengyizhan");
-        jsonMap.put("postName", "测试站点");
-        jsonMap.put("postCode", "001");
+        jsonMap.put("postName", "大连市邮区中心局邮件处理中心");
+        jsonMap.put("postCode", "1160071");
         String method = "logistics.courierStation/cancelTerminalOrder";
         param.put("method", method);
         //TODO
-        String appKey = "7201035434913171000";
+        String appKey = "7210436283015906876";
         param.put("app_key", appKey);
         // TODO
-        param.put("access_token", "4c146191-fed1-48ce-b0cd-3a047d7e304d");
+        param.put("access_token", "c0e6bfc9-22d2-4920-a3fe-8579a7f0db42");
         JSONObject jsonObject = new JSONObject(jsonMap);
         param.put("param_json", jsonObject.toJSONString());
         String timestamp = String.valueOf(new Date().getTime());
@@ -67,13 +66,15 @@ public class TestDouYinController {
         String paramPattern = "app_key" + appKey + "method" + method + "param_json" + jsonObject.toJSONString() + "timestamp" + timestamp + "v2";
 
         // TODO
-        String appSecret = "5349d12d-e4e0-4cc6-be0d-248526f262b9";
+        String appSecret = "5c3c2e7f-32de-4e98-9ccd-7e5a0139f943";
         String signPattern = appSecret + paramPattern + appSecret;
+        log.info("signPattern"+signPattern);
         String sign = hmac(signPattern, appSecret);
         param.put("sign", sign);
 
         //  System.out.println(HttpClientSend.sendDataForDouYin(param,jsonObject.toJSONString()));
         //   sendPostGetToken("create",appKey,appSecret,"ems");
+        log.info("发送到抖音："+ JSONObject.toJSONString(param));
         sendMsgToDouyin(method, param);
         return "ok";
     }
