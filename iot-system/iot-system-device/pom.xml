@@ -7,7 +7,6 @@
         <groupId>com.pudge.cn</groupId>
         <version>0.1</version>
     </parent>
-    <groupId>com.pudge.cn</groupId>
     <artifactId>iot-system-device</artifactId>
     <version>0.1</version>
     <name>iot-system-device</name>

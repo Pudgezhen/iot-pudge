@@ -33,11 +33,6 @@
         <!--            <version>2.7.5</version>-->
         <!--        </dependency>-->
 
-        <!-- Web MVC 组件   -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <!-- Spring Boot 监控客户端 -->
         <dependency>

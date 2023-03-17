@@ -36,7 +36,6 @@ public class loginController {
         if (!password.equals(userInfo.getPassword())){
             return PudResult.failed("密码不正确");
         }
-        // TODO 获取ip
         String ip = request.getRemoteAddr();
         // 封装Jwt
         Map<String,Object> map = new HashMap<>();
@@ -44,6 +43,7 @@ public class loginController {
         map.put("password",password);
         map.put("ip",ip);
         return PudResult.success(JwtToken.createToken(map));
-
     }
+
+
 }
