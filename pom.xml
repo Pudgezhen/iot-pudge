@@ -44,6 +44,9 @@
         <generator.version>1.4.0</generator.version>
         <redis.version>2.7.0</redis.version>
         <jwt.version>3.12.1</jwt.version>
+        <knife4j.version>2.0.1</knife4j.version>
+        <springfox.swagger2.version>2.9.2</springfox.swagger2.version>
+        <swagger.version>1.5.21</swagger.version>
     </properties>
 
 

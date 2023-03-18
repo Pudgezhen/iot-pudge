@@ -1,11 +1,11 @@
-package com.pudge.cn.iot.common.exception;
+package com.pudge.cn.iot.common.globalExceptionHandler.assertException;
 
 
-import com.pudge.cn.iot.common.response.IErrorCode;
+import com.pudge.cn.iot.common.globalResponse.IErrorCode;
 
 /**
  * 断言处理类，用于抛出各种API异常
- * Created by macro on 2020/2/27.
+ *
  */
 public class Asserts {
     public static void fail(String message) {

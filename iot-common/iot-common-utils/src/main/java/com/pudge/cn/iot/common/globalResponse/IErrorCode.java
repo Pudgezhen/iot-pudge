@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.response;
+package com.pudge.cn.iot.common.globalResponse;
 
 /**
  * @author mu_zhen

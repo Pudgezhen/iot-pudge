@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.response;
+package com.pudge.cn.iot.common.globalResponse;
 
 import com.github.pagehelper.PageInfo;
 import org.springframework.data.domain.Page;

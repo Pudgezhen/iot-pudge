@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.response;
+package com.pudge.cn.iot.common.globalResponse;
 
 /**
  * @author mu_zhen
@@ -19,10 +19,12 @@ public enum ResultCode implements IErrorCode {
         this.message = message;
     }
 
+    @Override
     public long getCode() {
         return code;
     }
 
+    @Override
     public String getMessage() {
         return message;
     }

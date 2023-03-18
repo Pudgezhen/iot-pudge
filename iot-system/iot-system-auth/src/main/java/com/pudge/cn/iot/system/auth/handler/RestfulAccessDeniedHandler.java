@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.system.auth.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.pudge.cn.iot.common.response.CommonResult;
+import com.pudge.cn.iot.common.globalResponse.CommonResult;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;

@@ -1,11 +1,9 @@
-package com.pudge.cn.iot.common.exception;
-
-
-import com.pudge.cn.iot.common.response.IErrorCode;
+package com.pudge.cn.iot.common.globalExceptionHandler.assertException;
+import com.pudge.cn.iot.common.globalResponse.IErrorCode;
 
 /**
  * 自定义API异常
- * Created by macro on 2020/2/27.
+ *
  */
 public class ApiException extends RuntimeException {
     private IErrorCode errorCode;

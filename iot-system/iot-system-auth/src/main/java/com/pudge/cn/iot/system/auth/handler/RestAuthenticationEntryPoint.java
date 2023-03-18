@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.system.auth.handler;
 
 import cn.hutool.json.JSONUtil;
-import com.pudge.cn.iot.common.response.CommonResult;
+import com.pudge.cn.iot.common.globalResponse.CommonResult;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
