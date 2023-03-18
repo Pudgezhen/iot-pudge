@@ -50,8 +50,14 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
+        <!--文件服务依赖-->
+        <!--minio文件服务-->
+        <dependency>
+            <groupId>io.minio</groupId>
+            <artifactId>minio</artifactId>
+            <version>8.4.1</version>
+        </dependency>
     </dependencies>
-
 
 
 </project>
