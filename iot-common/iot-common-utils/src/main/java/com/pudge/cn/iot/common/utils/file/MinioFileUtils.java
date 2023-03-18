@@ -1,19 +1,16 @@
-package com.youlai.common.file.service.impl;
-
+package com.pudge.cn.iot.common.utils.file;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
-import com.youlai.common.file.service.FileService;
-import com.youlai.common.file.vo.FileInfo;
+
 import io.minio.*;
 import io.minio.http.Method;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.apache.tomcat.jni.FileInfo;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,9 +19,27 @@ import java.time.LocalDateTime;
 
 
 @Component
-@ConfigurationProperties(prefix = "minio")
 @Slf4j
-public class MinioServiceImpl implements FileService, InitializingBean {
+public class MinioFileUtils {
+    private String fileName;
+
+    private String fileUrl;
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getFileUrl() {
+        return fileUrl;
+    }
+
+    public void setFileUrl(String fileUrl) {
+        this.fileUrl = fileUrl;
+    }
 
     /**
      * MinIO的API地址
@@ -59,7 +74,6 @@ public class MinioServiceImpl implements FileService, InitializingBean {
 
     private MinioClient minioClient;
 
-    @Override
     public void afterPropertiesSet() {
         log.info("MinIO Client init...");
         Assert.notBlank(endpoint, "MinIO endpoint can not be null");
@@ -79,7 +93,6 @@ public class MinioServiceImpl implements FileService, InitializingBean {
      * @param file 表单文件对象
      * @return
      */
-    @Override
     @SneakyThrows
     public FileInfo uploadFile(MultipartFile file) {
         // 存储桶不存在则创建
@@ -116,8 +129,8 @@ public class MinioServiceImpl implements FileService, InitializingBean {
         }
 
         FileInfo fileInfo = new FileInfo();
-        fileInfo.setName(fileName);
-        fileInfo.setUrl(fileUrl);
+        this.setFileName(fileName);
+        setFileUrl(fileUrl);
         return fileInfo;
     }
 
@@ -128,7 +141,6 @@ public class MinioServiceImpl implements FileService, InitializingBean {
      *                 https://oss.youlai.tech/default/2022/11/20/test.jpg
      * @return
      */
-    @Override
     @SneakyThrows
     public boolean deleteFile(String filePath) {
         Assert.notBlank(filePath, "删除文件路径不能为空");
