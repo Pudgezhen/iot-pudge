@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableFeignClients(basePackages = {"com.pudge.cn.iot.api.user.services"})
+@EnableFeignClients(basePackages = {"com.pudge.cn.iot.api.user."})
 public class DeviceApplication {
 
     public static void main(String[] args) {
