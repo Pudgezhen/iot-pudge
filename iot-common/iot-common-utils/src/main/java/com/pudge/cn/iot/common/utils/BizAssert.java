@@ -1,13 +1,13 @@
 package com.pudge.cn.iot.common.utils;
 
 import cn.hutool.core.util.ArrayUtil;
-import com.itheima.pinda.exception.BizException;
-import com.itheima.pinda.exception.code.BaseExceptionCode;
+import com.pudge.cn.iot.common.globalExceptionHandler.BizException;
+import com.pudge.cn.iot.common.globalExceptionHandler.code.BaseExceptionCode;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
 
-import static com.itheima.pinda.exception.BaseException.BASE_VALID_PARAM;
+import static com.pudge.cn.iot.common.globalExceptionHandler.BaseException.BASE_VALID_PARAM;
 
 /**
  * 断言
