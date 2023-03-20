@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.ComponentScan;
-
+//,scanBasePackages={"com.pudge.cn.iot.common.cache.impl"}
 @EnableConfigurationProperties
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class,scanBasePackages={"com.pudge.cn.iot.common.cache.impl"})
 public class GatewayApplication {

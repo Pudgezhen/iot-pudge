@@ -1,23 +1,12 @@
 package com.pudge.cn.iot.system.device.controller;
 
 
-import com.alibaba.fastjson.JSONObject;
-import com.pudge.cn.iot.api.device.pojo.HaiHang;
-import com.pudge.cn.iot.api.device.pojo.QpsHaiHangVo;
-import com.pudge.cn.iot.common.utils.excel.operation.ExcelOperation;
-import com.pudge.cn.iot.system.device.service.IQpsHaiHangService;
+
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.*;
 
 @RestController
 @RequestMapping

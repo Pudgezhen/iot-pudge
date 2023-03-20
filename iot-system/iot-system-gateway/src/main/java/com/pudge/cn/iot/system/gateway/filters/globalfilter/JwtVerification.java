@@ -33,8 +33,11 @@ public class JwtVerification implements Ordered, GlobalFilter {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String token = exchange.getRequest().getHeaders().getFirst(AuthConstant.JWT_TOKEN_HEADER);
         if (StrUtil.isEmpty(token)) {
+            String hello = (String) redisService.get("hello");
+            System.out.println("获取到的redis数据："+hello);
             return chain.filter(exchange);
         }
+
         //从token中解析用户信息并设置到Header中去
         String realToken = token.replace(AuthConstant.JWT_TOKEN_PREFIX, "");
         Map<String,Object> map = JwtToken.parseToken(realToken);

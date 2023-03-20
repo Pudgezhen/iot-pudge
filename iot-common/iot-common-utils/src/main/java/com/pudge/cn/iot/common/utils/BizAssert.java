@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.common.utils;
 
 import cn.hutool.core.util.ArrayUtil;
-import com.pudge.cn.iot.common.globalExceptionHandler.BizException;
+import com.pudge.cn.iot.common.globalExceptionHandler.handler.BizException;
 import com.pudge.cn.iot.common.globalExceptionHandler.code.BaseExceptionCode;
 
 import java.time.LocalDateTime;
