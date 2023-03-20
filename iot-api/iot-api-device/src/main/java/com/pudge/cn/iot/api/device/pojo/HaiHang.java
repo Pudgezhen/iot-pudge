@@ -11,5 +11,5 @@ import lombok.Data;
 public class HaiHang {
     private String key;
 
-    private QpsHaiHangVo qpsHaiHangVo;
+
 }

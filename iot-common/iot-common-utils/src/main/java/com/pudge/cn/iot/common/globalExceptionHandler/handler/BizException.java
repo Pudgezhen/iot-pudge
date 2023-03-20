@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.globalExceptionHandler;
+package com.pudge.cn.iot.common.globalExceptionHandler.handler;
 
 import com.pudge.cn.iot.common.globalExceptionHandler.code.BaseExceptionCode;
 

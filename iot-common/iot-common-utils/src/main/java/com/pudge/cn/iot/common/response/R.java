@@ -2,7 +2,7 @@ package com.pudge.cn.iot.common.response;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;
-import com.pudge.cn.iot.common.globalExceptionHandler.BizException;
+import com.pudge.cn.iot.common.globalExceptionHandler.handler.BizException;
 import com.pudge.cn.iot.common.globalExceptionHandler.code.BaseExceptionCode;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
