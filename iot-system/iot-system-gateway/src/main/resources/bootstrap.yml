@@ -14,7 +14,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 120.48.106.232:8848
+        server-addr: www.bitegatti.com:8848
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
         username: nacos
@@ -23,7 +23,7 @@ spring:
       config:
         username: nacos
         password: Csjava666
-        server-addr: 120.48.106.232:8848
+        server-addr: www.bitegatti.com:8848
         file-extension: yaml
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
@@ -69,7 +69,7 @@ spring:
             allow-credentials: true
             exposedHeaders: "Content-Disposition,Content-Type,Cache-Control"
   redis:
-    host: 120.48.106.232
+    host: www.bitegatti.com
     port: 16379
     password: CsPudge666
 
