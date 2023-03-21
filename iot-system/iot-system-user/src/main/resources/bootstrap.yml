@@ -15,13 +15,13 @@ spring:
 
   redis:
     port: 16379
-    host: 120.48.106.232
+    host: www.bitegatti.com
     password: CsPudge666
 
   cloud:
     nacos:
       discovery:
-        server-addr: 120.48.106.232:8848
+        server-addr: www.bitegatti.com:8848
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
         username: nacos
@@ -29,14 +29,14 @@ spring:
       config:
         username: nacos
         password: Csjava666
-        server-addr: 120.48.106.232:8848
+        server-addr: www.bitegatti.com:8848
         file-extension: yaml
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
 
   datasource:
     druid:
-      url: jdbc:mysql://120.48.106.232:13306/iot_user?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://www.bitegatti.com:13306/iot_user?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
       username: root
       password: CsPudge666
       # 初始化连接池大小，默认值：0
