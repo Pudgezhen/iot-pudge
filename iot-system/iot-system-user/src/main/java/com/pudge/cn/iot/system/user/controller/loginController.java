@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.system.user.controller;
 
 import com.pudge.cn.iot.api.user.entity.UserInfo;
-import com.pudge.cn.iot.common.response.PudResult;
+import com.pudge.cn.iot.common.golbalResponse.PudResult;
 import com.pudge.cn.iot.common.utils.jwt.JwtToken;
 import com.pudge.cn.iot.system.user.service.IUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

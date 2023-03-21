@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.response;
+package com.pudge.cn.iot.common.golbalResponse;
 
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Maps;

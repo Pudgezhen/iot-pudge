@@ -40,7 +40,7 @@ public class TestController {
 
 //    @RequestMapping("/testExcel")
 //    @ApiOperation(value = "测试下载Excel", notes = "测试下载Excel")
-//    public String testExcel(HttpServletResponse response, @RequestParam String a) throws IllegalAccessException, IOException {
+//    public String testExcel(HttpServletResponse golbalResponse, @RequestParam String a) throws IllegalAccessException, IOException {
 //
 //        Map<String, Object> map = qpsHaiHangService.queryHaiHang(a);
 //        Map<String, List<Object>> mapList = new HashMap<>();
@@ -52,9 +52,9 @@ public class TestController {
 //        HaiHang haihang = JSONObject.parseObject(json, HaiHang.class);
 //        System.out.println(haihang);
 //        HSSFWorkbook workbook = ExcelOperation.exportExcelSheets(QpsHaiHangVo.class, mapList, null);
-//        response.setHeader("Content-disposition", "attachment;filename=test.xls");
-//        response.setContentType("application/vnd.ms-excel");
-//        OutputStream os = response.getOutputStream();
+//        golbalResponse.setHeader("Content-disposition", "attachment;filename=test.xls");
+//        golbalResponse.setContentType("application/vnd.ms-excel");
+//        OutputStream os = golbalResponse.getOutputStream();
 //        workbook.write(os);
 //        os.flush();
 //        os.close();

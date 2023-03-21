@@ -33,8 +33,8 @@
 //        for (String str : tranceNoArr) {
 //            JSONObject jsonObject = new JSONObject();
 //            jsonObject.put("awbCode", str);
-//            String response = HttpClientSend.sendDataForHaiHang(jsonObject.toString());
-//            JSONObject responseMap = JSONObject.parseObject(response);
+//            String golbalResponse = HttpClientSend.sendDataForHaiHang(jsonObject.toString());
+//            JSONObject responseMap = JSONObject.parseObject(golbalResponse);
 //            if (!"Success".equals(responseMap.get("status")) || null == responseMap.get("data")) {
 //                continue;
 //            }

@@ -14,8 +14,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.youlai</groupId>
-            <artifactId>common-core</artifactId>
+            <groupId>com.pudge.cn</groupId>
+            <artifactId>iot-common-utils</artifactId>
+            <version>0.1</version>
         </dependency>
 
         <dependency>

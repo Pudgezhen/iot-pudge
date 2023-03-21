@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.common.globalExceptionHandler;
 
 
-import com.pudge.cn.iot.common.response.PudResult;
+import com.pudge.cn.iot.common.golbalResponse.PudResult;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

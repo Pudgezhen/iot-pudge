@@ -4,7 +4,7 @@ import cn.hutool.core.util.StrUtil;
 
 import com.pudge.cn.iot.common.globalExceptionHandler.BizException;
 import com.pudge.cn.iot.common.globalExceptionHandler.code.ExceptionCode;
-import com.pudge.cn.iot.common.response.R;
+import com.pudge.cn.iot.common.golbalResponse.R;
 import com.pudge.cn.iot.common.utils.StrPool;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.exceptions.PersistenceException;

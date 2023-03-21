@@ -1,4 +1,4 @@
-package com.youlai.common.elasticsearch.service;
+package com.pudge.cn.iot.common.elasticsearch.service;
 
 import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.json.JSONUtil;

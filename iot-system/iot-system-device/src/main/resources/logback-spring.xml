@@ -7,86 +7,86 @@
         </encoder>
     </appender>
 
-    <!--定义一个将日志输出到文件的appender，名称为FILE_LOG -->
-    <appender name="FILE_LOG" class="ch.qos.logback.core.FileAppender">
-        <file>D:/test.log</file>
-        <append>true</append>
-        <encoder>
-            <pattern>[IoT]%date [%thread %line] %level >> %msg >> %logger{10}%n</pattern>
-        </encoder>
-    </appender>
+<!--    &lt;!&ndash;定义一个将日志输出到文件的appender，名称为FILE_LOG &ndash;&gt;-->
+<!--    <appender name="FILE_LOG" class="ch.qos.logback.core.FileAppender">-->
+<!--        <file>D:/test.log</file>-->
+<!--        <append>true</append>-->
+<!--        <encoder>-->
+<!--            <pattern>[IoT]%date [%thread %line] %level >> %msg >> %logger{10}%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
-    <!--  按时间滚动产生日志文件 -->
-    <appender name="ROL-FILE-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--滚动策略，按照时间滚动 TimeBasedRollingPolicy-->
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>D:/logs/test.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <!-- 只保留近七天的日志 -->
-            <maxHistory>7</maxHistory>
-            <!-- 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志 -->
-            <totalSizeCap>1GB</totalSizeCap>
-        </rollingPolicy>
+<!--    &lt;!&ndash;  按时间滚动产生日志文件 &ndash;&gt;-->
+<!--    <appender name="ROL-FILE-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        &lt;!&ndash;滚动策略，按照时间滚动 TimeBasedRollingPolicy&ndash;&gt;-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>D:/logs/test.%d{yyyy-MM-dd}.log</fileNamePattern>-->
+<!--            &lt;!&ndash; 只保留近七天的日志 &ndash;&gt;-->
+<!--            <maxHistory>7</maxHistory>-->
+<!--            &lt;!&ndash; 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志 &ndash;&gt;-->
+<!--            <totalSizeCap>1GB</totalSizeCap>-->
+<!--        </rollingPolicy>-->
 
-        <encoder>
-            <pattern>[IoT]%date [%thread %line] %level >> %msg >> %logger{10}%n</pattern>
-        </encoder>
-    </appender>
+<!--        <encoder>-->
+<!--            <pattern>[IoT]%date [%thread %line] %level >> %msg >> %logger{10}%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
-    <!-- 按时间和文件大小滚动产生日志文件 -->
-    <appender name="ROL-SIZE-FILE-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>D:/logs/test.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
-            <!-- 单个文件的最大内存 -->
-            <maxFileSize>100MB</maxFileSize>
-            <!-- 只保留近七天的日志 -->
-            <maxHistory>7</maxHistory>
-            <!-- 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志 -->
-            <totalSizeCap>1GB</totalSizeCap>
-        </rollingPolicy>
+<!--    &lt;!&ndash; 按时间和文件大小滚动产生日志文件 &ndash;&gt;-->
+<!--    <appender name="ROL-SIZE-FILE-LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>D:/logs/test.%d{yyyy-MM-dd}.%i.log</fileNamePattern>-->
+<!--            &lt;!&ndash; 单个文件的最大内存 &ndash;&gt;-->
+<!--            <maxFileSize>100MB</maxFileSize>-->
+<!--            &lt;!&ndash; 只保留近七天的日志 &ndash;&gt;-->
+<!--            <maxHistory>7</maxHistory>-->
+<!--            &lt;!&ndash; 用来指定日志文件的上限大小，那么到了这个值，就会删除旧的日志 &ndash;&gt;-->
+<!--            <totalSizeCap>1GB</totalSizeCap>-->
+<!--        </rollingPolicy>-->
 
-        <encoder>
-            <pattern>[IoT]%date [%thread %line] %level >> %msg >> %logger{10}%n</pattern>
-        </encoder>
+<!--        <encoder>-->
+<!--            <pattern>[IoT]%date [%thread %line] %level >> %msg >> %logger{10}%n</pattern>-->
+<!--        </encoder>-->
 
-        <!-- 只处理INFO级别以及之上的日志 -->
-        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
-        </filter>
+<!--        &lt;!&ndash; 只处理INFO级别以及之上的日志 &ndash;&gt;-->
+<!--        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--            <level>INFO</level>-->
+<!--        </filter>-->
 
-        <!-- 只处理INFO级别的日志 -->
-        <filter class="ch.qos.logback.classic.filter.LevelFilter">
-            <level>INFO</level>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-    </appender>
+<!--        &lt;!&ndash; 只处理INFO级别的日志 &ndash;&gt;-->
+<!--        <filter class="ch.qos.logback.classic.filter.LevelFilter">-->
+<!--            <level>INFO</level>-->
+<!--            <onMatch>ACCEPT</onMatch>-->
+<!--            <onMismatch>DENY</onMismatch>-->
+<!--        </filter>-->
+<!--    </appender>-->
 
-    <!-- 异步写入日志 -->
-    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">
-        <!-- 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 -->
-        <discardingThreshold>0</discardingThreshold>
-        <!-- 更改默认的队列的深度,该值会影响性能.默认值为256 -->
-        <queueSize>512</queueSize>
-        <!-- 添加附加的appender,最多只能添加一个 -->
-        <appender-ref ref="FILE_LOG"/>
-    </appender>
+<!--    &lt;!&ndash; 异步写入日志 &ndash;&gt;-->
+<!--    <appender name="ASYNC" class="ch.qos.logback.classic.AsyncAppender">-->
+<!--        &lt;!&ndash; 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 &ndash;&gt;-->
+<!--        <discardingThreshold>0</discardingThreshold>-->
+<!--        &lt;!&ndash; 更改默认的队列的深度,该值会影响性能.默认值为256 &ndash;&gt;-->
+<!--        <queueSize>512</queueSize>-->
+<!--        &lt;!&ndash; 添加附加的appender,最多只能添加一个 &ndash;&gt;-->
+<!--        <appender-ref ref="FILE_LOG"/>-->
+<!--    </appender>-->
 
 
-    <!-- 指定com.demo包下的日志打印级别为DEBUG，但是由于没有引用appender，所以该logger不会打印日志信息，日志信息向上传递 -->
-    <logger name="com.example" level="DEBUG"></logger>
-    <!-- 这里的logger根据需要自己灵活配置 ，我这里只是给出一个demo-->
+<!--    &lt;!&ndash; 指定com.demo包下的日志打印级别为DEBUG，但是由于没有引用appender，所以该logger不会打印日志信息，日志信息向上传递 &ndash;&gt;-->
+<!--    <logger name="com.example" level="DEBUG"></logger>-->
+<!--    &lt;!&ndash; 这里的logger根据需要自己灵活配置 ，我这里只是给出一个demo&ndash;&gt;-->
 
-    <!-- 指定开发环境基础的日志输出级别为DEBUG，并且绑定了名为STDOUT的appender，表示将日志信息输出到控制台 -->
-    <springProfile name="dev">
-        <root level="INFO">
-            <appender-ref ref="STDOUT"/>
-        </root>
-    </springProfile>
+<!--    &lt;!&ndash; 指定开发环境基础的日志输出级别为DEBUG，并且绑定了名为STDOUT的appender，表示将日志信息输出到控制台 &ndash;&gt;-->
+<!--    <springProfile name="dev">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="STDOUT"/>-->
+<!--        </root>-->
+<!--    </springProfile>-->
 
-    <!-- 指定生产环境基础的日志输出级别为INFO，并且绑定了名为ASYNC的appender，表示将日志信息异步输出到文件 -->
-    <springProfile name="prod">
-        <root level="INFO">
-            <appender-ref ref="ASYNC"/>
-        </root>
-    </springProfile>
+<!--    &lt;!&ndash; 指定生产环境基础的日志输出级别为INFO，并且绑定了名为ASYNC的appender，表示将日志信息异步输出到文件 &ndash;&gt;-->
+<!--    <springProfile name="prod">-->
+<!--        <root level="INFO">-->
+<!--            <appender-ref ref="ASYNC"/>-->
+<!--        </root>-->
+<!--    </springProfile>-->
 </configuration>

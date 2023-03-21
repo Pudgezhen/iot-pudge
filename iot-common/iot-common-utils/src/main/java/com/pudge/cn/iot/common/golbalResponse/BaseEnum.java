@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.response;
+package com.pudge.cn.iot.common.golbalResponse;
 import com.pudge.cn.iot.common.utils.MapHelper;
 import java.util.Arrays;
 import java.util.Map;

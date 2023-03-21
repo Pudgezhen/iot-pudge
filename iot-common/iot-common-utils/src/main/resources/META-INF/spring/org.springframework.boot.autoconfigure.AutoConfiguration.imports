@@ -1,2 +1,2 @@
-com.youlai.common.file.service.impl.MinioServiceImpl
-com.youlai.common.file.controller.FileController
+com.pudge.cn.file.service.impl.MinioServiceImpl
+com.pudge.cn.file.controller.FileController

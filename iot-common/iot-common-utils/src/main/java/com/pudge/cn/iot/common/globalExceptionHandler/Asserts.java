@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.common.globalExceptionHandler;
 
 
-import com.pudge.cn.iot.common.response.IErrorCode;
+import com.pudge.cn.iot.common.golbalResponse.IErrorCode;
 
 /**
  * 断言处理类，用于抛出各种API异常
