@@ -2,14 +2,18 @@ package com.pudge.cn.iot.system.gateway;
 
 
 
+
+import com.pudge.cn.iot.system.gateway.filters.IgnoreUrlsRemoveJwtFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.ComponentScan;
-//,scanBasePackages={"com.pudge.cn.iot.common.cache.impl"}
+
+
+
+
 @EnableConfigurationProperties
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class,scanBasePackages={"com.pudge.cn.iot.common.cache.impl"})
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 public class GatewayApplication {
 
     public static void main(String[] args) {
