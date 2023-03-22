@@ -3,15 +3,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
+        <artifactId>iot-api</artifactId>
         <groupId>com.pudge.cn</groupId>
-        <artifactId>iot-pudge</artifactId>
         <version>0.1</version>
     </parent>
-    <artifactId>iot-common</artifactId>
+    <artifactId>iot-api-auth</artifactId>
     <version>0.1</version>
-    <name>iot-common</name>
-    <packaging>pom</packaging>
-    <description>IoT 公共工程</description>
+    <name>iot-api-auth</name>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
 

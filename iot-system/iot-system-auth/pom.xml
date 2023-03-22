@@ -14,10 +14,11 @@
     <description>权限管理</description>
 
     <dependencies>
-        <!--SpringSecurity依赖配置-->
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>com.pudge.cn</groupId>
+            <artifactId>iot-api-auth</artifactId>
+            <version>0.1</version>
         </dependency>
         <!--Hutool Java工具包-->
         <dependency>
@@ -33,14 +34,11 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.pudge.cn</groupId>
             <artifactId>iot-common-utils</artifactId>
             <version>0.1</version>
         </dependency>
+
 
         <dependency>
             <groupId>com.baomidou</groupId>
