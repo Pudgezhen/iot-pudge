@@ -163,5 +163,10 @@ public class UserInfo implements Serializable {
     @TableField("areaid")
     private String areaid;
 
+    /**
+     *  角色Id
+     */
+    @TableField("roleid")
+    private String roleid;
 
 }

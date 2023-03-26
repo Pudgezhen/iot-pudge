@@ -4,10 +4,9 @@ package com.pudge.cn.iot.system.user.controller;
 import com.pudge.cn.iot.api.user.entity.UserInfo;
 import com.pudge.cn.iot.common.response.PudResult;
 import com.pudge.cn.iot.system.user.service.IUserInfoService;
+import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -22,6 +21,7 @@ import java.util.Date;
 @RestController
 @RequestMapping("/userInfo")
 public class UserInfoController {
+
 
     @Autowired
     private IUserInfoService userInfoService;
@@ -49,5 +49,10 @@ public class UserInfoController {
             //TODO  添加 用户信息的 校验 以及 密码的 MD5加密
             return PudResult.failed();
         }
+    }
+
+    @GetMapping("getUser")
+    public UserInfo getUser(@RequestParam("username") String username){
+        return userInfoService.getById(username);
     }
 }

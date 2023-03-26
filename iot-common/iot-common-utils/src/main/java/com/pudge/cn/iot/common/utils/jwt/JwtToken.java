@@ -90,7 +90,7 @@ public class JwtToken {
      */
     public static void main(String[] args) {
         Map<String,Object> dataMap = new HashMap<String,Object>();
-        dataMap.put("name","zhangsan");
+        dataMap.put("username","zhangsan");
         dataMap.put("age","26");
         dataMap.put("address","深圳市");
 

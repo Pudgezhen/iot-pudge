@@ -1,6 +1,6 @@
 #当前服务端口号
 server:
-  port: 9003
+  port: 9004
 #  servlet:
 #    #配置上下文对象  访问的项目名称
 #    context-path: /ordera
@@ -22,9 +22,14 @@ spring:
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
 
+  redis:
+    host: www.bitegatti.com
+    port: 16379
+    password: CsPudge666
+
   datasource:
     druid:
-      url: jdbc:mysql://www.bitegatti.com:13306/iot?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://www.bitegatti.com:13306/iot_permission?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
       username: root
       password: CsPudge666
       initial-size: 5
