@@ -1,7 +1,7 @@
 package com.pudge.cn.iot.system.user.controller;
 
+import com.baomidou.mybatisplus.extension.api.R;
 import com.pudge.cn.iot.api.user.entity.UserInfo;
-import com.pudge.cn.iot.common.response.PudResult;
 import com.pudge.cn.iot.common.utils.jwt.JwtToken;
 import com.pudge.cn.iot.system.user.service.IUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,16 +25,16 @@ public class loginController {
     private IUserInfoService userInfoService;
 
     @RequestMapping("/do")
-    public PudResult doLogin(String username, String password,
-                             HttpServletRequest request){
+    public R doLogin(String username, String password,
+                     HttpServletRequest request){
         // 查询数据库用户信息
         UserInfo userInfo = userInfoService.getById(username);
         if (userInfo == null){
-            return PudResult.failed("此用户不存在");
+            return R.failed("此用户不存在");
         }
         // 密码校验
         if (!password.equals(userInfo.getPassword())){
-            return PudResult.failed("密码不正确");
+            return R.failed("密码不正确");
         }
         String ip = request.getRemoteAddr();
         // 封装Jwt
@@ -42,7 +42,7 @@ public class loginController {
         map.put("username",username);
         map.put("password",password);
         map.put("ip",ip);
-        return PudResult.success(JwtToken.createToken(map));
+        return R.ok(JwtToken.createToken(map));
     }
 
 

@@ -7,34 +7,14 @@ package com.pudge.cn.iot.common.constant;
 public interface AuthConstant {
 
     /**
-     * JWT存储权限前缀
+     * 完全匹配的权限前缀
      */
-    String AUTHORITY_PREFIX = "ROLE_";
+    String Auth_Absolutely_Match = "Auth0:";
 
     /**
-     * JWT存储权限属性
+     * 通配符匹配的权限前缀
      */
-    String AUTHORITY_CLAIM_NAME = "authorities";
-
-    /**
-     * 后台管理client_id
-     */
-    String ADMIN_CLIENT_ID = "admin-app";
-
-    /**
-     * 前台商城client_id
-     */
-    String PORTAL_CLIENT_ID = "portal-app";
-
-    /**
-     * 后台管理接口路径匹配
-     */
-    String ADMIN_URL_PATTERN = "/mall-admin/**";
-
-    /**
-     * Redis缓存权限规则key
-     */
-    String RESOURCE_ROLES_MAP_KEY = "auth:resourceRolesMap";
+    String Auth_Wildcard_Match = "Auth1:";
 
     /**
      * 认证信息Http请求头

@@ -27,6 +27,7 @@
         <result column="provinceid" property="provinceid" />
         <result column="cityid" property="cityid" />
         <result column="areaid" property="areaid" />
+        <result column="roleid" property="roleid" />
     </resultMap>
 
 </mapper>
