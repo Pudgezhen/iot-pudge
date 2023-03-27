@@ -2,10 +2,12 @@ package com.pudge.cn.iot.common.utils.jwt;
 
 
 import cn.hutool.core.lang.UUID;
+import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.pudge.cn.iot.common.entity.JwtAuthPayload;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
@@ -24,18 +26,18 @@ public class JwtToken {
 
     /***
      * 生成令牌
-     * @param dataMap
+     * @param payload
      * @return
      */
-    public static String createToken(Map<String,Object> dataMap){
-        return createToken(dataMap,null);
+    public static String createToken(JwtAuthPayload payload){
+        return createToken(payload,null);
     }
 
     /***
      * 生成令牌
      * @return
      */
-    public static String createToken(Map<String,Object> dataMap,String secret){
+    public static String createToken(JwtAuthPayload payload,String secret){
         //秘钥为空就采用默认秘钥
         if(StringUtils.isEmpty(secret)){
             secret = DEFAULT_SECRET;
@@ -45,7 +47,7 @@ public class JwtToken {
         Algorithm algorithm = Algorithm.HMAC256(secret);
         //创建令牌
         return JWT.create()
-                .withClaim("body",dataMap)
+                .withClaim("body", JSONObject.parseObject(JSONObject.toJSONString(payload),Map.class))
                 .withIssuer("pudge")            //JWT签发者
                 .withSubject("JWT令牌")       //主题
                 .withAudience("member")      //接收JWT的一方
@@ -61,7 +63,7 @@ public class JwtToken {
      * @param token
      * @return
      */
-    public static Map<String,Object> parseToken(String token){
+    public static JwtAuthPayload parseToken(String token){
         return parseToken(token,null);
     }
 
@@ -70,7 +72,7 @@ public class JwtToken {
      * @param token
      * @return
      */
-    public static Map<String,Object> parseToken(String token,String secret){
+    public static JwtAuthPayload parseToken(String token,String secret){
         //秘钥为空就采用默认秘钥
         if(StringUtils.isEmpty(secret)){
             secret = DEFAULT_SECRET;
@@ -81,7 +83,7 @@ public class JwtToken {
         JWTVerifier verifier = JWT.require(algorithm).build();
         //校验解析
         DecodedJWT jwt = verifier.verify(token);
-        return jwt.getClaim("body").as(Map.class);
+        return jwt.getClaim("body").as(JwtAuthPayload.class);
     }
 
     /***
@@ -89,21 +91,19 @@ public class JwtToken {
      * @param args
      */
     public static void main(String[] args) {
-        Map<String,Object> dataMap = new HashMap<String,Object>();
-        dataMap.put("username","zhangsan");
-        dataMap.put("age","26");
-        dataMap.put("address","深圳市");
+        JwtAuthPayload payload = new JwtAuthPayload();
+        payload.setIp("127.0.0.1");
+        payload.setRoleid("1,2,3");
+        payload.setUsername("hhh");
 
-        Map<String,Object> headerMap = new HashMap<String,Object>();
-        headerMap.put("version","v1.0");
-        headerMap.put("mysql","5.7");
+
 
         //创建令牌
-        String token = createToken(dataMap);
+        String token = createToken(payload);
         System.out.println(token);
 
         //解析令牌
-        Map<String,Object> resultMap =parseToken(token);
-        System.out.println(resultMap);
+        JwtAuthPayload jwtAuthPayload =parseToken(token);
+        System.out.println(JSONObject.toJSONString(jwtAuthPayload));
     }
 }
