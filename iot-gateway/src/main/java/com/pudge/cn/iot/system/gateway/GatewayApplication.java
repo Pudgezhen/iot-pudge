@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableConfigurationProperties
 @SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
-@EnableFeignClients(basePackages = {"com.pudge.cn.iot.api.user.feign","com.pudge.cn.iot.api.auth.feign"})
+@EnableFeignClients
 public class GatewayApplication {
 
     public static void main(String[] args) {

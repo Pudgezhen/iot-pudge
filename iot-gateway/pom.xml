@@ -3,16 +3,22 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <artifactId>iot-system</artifactId>
+        <artifactId>iot-pudge</artifactId>
         <groupId>com.pudge.cn</groupId>
         <version>0.1</version>
     </parent>
-    <artifactId>iot-system-gateway</artifactId>
+    <artifactId>iot-gateway</artifactId>
     <version>0.1</version>
-    <name>iot-system-gateway</name>
+    <name>iot-gateway</name>
     <description>IoT 网关服务工程</description>
 
     <dependencies>
+        <!-- 解决netty 依赖版本问题导致启动失败-->
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty</artifactId>
+            <version>0.9.25.RELEASE</version>
+        </dependency>
 
         <dependency>
             <groupId>com.pudge.cn</groupId>
@@ -20,27 +26,13 @@
             <version>0.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.pudge.cn</groupId>
-            <artifactId>iot-api-user</artifactId>
-            <version>0.1</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-        <!--  配置解析器       -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>com.pudge.cn</groupId>
             <artifactId>iot-common-utils</artifactId>
