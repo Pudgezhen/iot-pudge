@@ -2,7 +2,10 @@ package com.pudge.cn.iot.system.user.controller;
 
 
 import com.pudge.cn.iot.api.user.entity.UserInfo;
+import com.pudge.cn.iot.common.constant.AuthConstant;
 import com.pudge.cn.iot.common.response.PudResult;
+import com.pudge.cn.iot.common.response.R;
+import com.pudge.cn.iot.common.utils.encipher.MD5Utils;
 import com.pudge.cn.iot.system.user.service.IUserInfoService;
 import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,27 +30,27 @@ public class UserInfoController {
     private IUserInfoService userInfoService;
 
     @RequestMapping("/register")
-    public PudResult register(@RequestBody UserInfo userInfo){
+    public R register(@RequestBody UserInfo userInfo) throws Exception {
         userInfo.setCreated(new Date());
         userInfo.setUpdated(new Date());
+        userInfo.setPassword(MD5Utils.getMD5Str(userInfo.getPassword()+ AuthConstant.MD5_DEFAULT_SALT));
         boolean flag = userInfoService.save(userInfo);
         if (flag){
-            return PudResult.success("注册成功");
+            return R.success("注册成功");
         }else{
-            //TODO  添加 用户信息的 校验 以及 密码的 MD5加密
-            return PudResult.failed();
+            return R.fail("注册失败");
         }
     }
 
     @RequestMapping("/modify")
-    public PudResult modify(@RequestBody UserInfo userInfo){
+    public R modify(@RequestBody UserInfo userInfo){
         userInfo.setUpdated(new Date());
         boolean flag = userInfoService.updateById(userInfo);
         if (flag){
-            return PudResult.success("注册成功");
+            return R.success("注册成功");
         }else{
             //TODO  添加 用户信息的 校验 以及 密码的 MD5加密
-            return PudResult.failed();
+            return R.fail("注册失败");
         }
     }
 

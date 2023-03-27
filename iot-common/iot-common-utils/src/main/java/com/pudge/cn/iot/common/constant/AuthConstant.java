@@ -35,4 +35,9 @@ public interface AuthConstant {
      *  用户JWT令牌在redis的前缀
      */
     String JWT_REDIS_PREFIX = "jwt:";
+
+    /**
+     *  MD5加密盐值
+     */
+    String MD5_DEFAULT_SALT = "iotPudgeDefaultSalt";
 }
