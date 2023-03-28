@@ -57,7 +57,14 @@ spring:
             # 校验
             # 去除一个前缀
             - StripPrefix=1
-
+        - id: auth   #路由id,唯一
+          uri: lb://iot-auth   #负载到iot-device   服务名  lb代表开启loadBalance
+          predicates:
+            - Path=/auth/** #以device开头的请求都负载到iot-device服务
+          filters:
+            # 校验
+            # 去除一个前缀
+            - StripPrefix=1
 
       #跨域设置
       globalcors:
@@ -100,6 +107,8 @@ secure:
       - "/mall-admin/admin/login"
       - "/mall-admin/admin/register"
       - "/mall-admin/minio/upload"
+      - "/user/userInfo/register"
+      - "/user/login/do"
 
 # 暴露监控端点
 management:

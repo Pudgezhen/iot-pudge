@@ -93,8 +93,8 @@ public class JwtToken {
     public static void main(String[] args) {
         JwtAuthPayload payload = new JwtAuthPayload();
         payload.setIp("127.0.0.1");
-        payload.setRoleid("1,2,3");
-        payload.setUsername("hhh");
+        payload.setRoleid("1,2");
+        payload.setUsername("王桢");
 
 
 

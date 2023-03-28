@@ -8,9 +8,10 @@ import com.pudge.cn.iot.common.utils.encipher.MD5Utils;
 import com.pudge.cn.iot.common.utils.jwt.JwtToken;
 import com.pudge.cn.iot.system.user.service.IUserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 
 /**
@@ -25,10 +26,12 @@ public class loginController {
     @Autowired
     private IUserInfoService userInfoService;
 
-    @RequestMapping("/do")
-    public R doLogin(String username, String password,
+    @PostMapping("/do")
+    public R doLogin(@RequestBody Map<String,String> map,
                      HttpServletRequest request) throws Exception {
         // 查询数据库用户信息
+        String username = map.get("username");
+        String password = map.get("password");
         UserInfo userInfo = userInfoService.getById(username);
         if (userInfo == null){
             return R.fail("此用户不存在");
