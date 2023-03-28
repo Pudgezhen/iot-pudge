@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.utils.tree;
 
 import java.io.Serializable;
 import java.util.ArrayList;

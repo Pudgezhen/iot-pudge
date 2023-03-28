@@ -3,7 +3,7 @@ package com.pudge.cn.iot.common.response;
 import com.pudge.cn.iot.common.context.BaseContextHandler;
 import com.pudge.cn.iot.common.globalExceptionHandler.handler.BizException;
 import com.pudge.cn.iot.common.globalExceptionHandler.code.BaseExceptionCode;
-import com.pudge.cn.iot.common.utils.NumberHelper;
+import com.pudge.cn.iot.common.utils.number.NumberUtil;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -132,11 +132,11 @@ public abstract class BaseController {
 //    }
 
     protected Integer getPageNo() {
-        return NumberHelper.intValueOf(request.getParameter(CURRENT), 1);
+        return NumberUtil.intValueOf(request.getParameter(CURRENT), 1);
     }
 
     protected Integer getPageSize() {
-        return NumberHelper.intValueOf(request.getParameter(SIZE), DEFAULT_LIMIT);
+        return NumberUtil.intValueOf(request.getParameter(SIZE), DEFAULT_LIMIT);
     }
 
 //    /**

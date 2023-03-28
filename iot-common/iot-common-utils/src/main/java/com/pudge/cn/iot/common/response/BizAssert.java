@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.response;
 
 import cn.hutool.core.util.ArrayUtil;
 import com.pudge.cn.iot.common.globalExceptionHandler.handler.BizException;

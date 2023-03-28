@@ -1,6 +1,6 @@
 package com.pudge.cn.iot.system.gateway.config;
 
-import com.pudge.cn.iot.common.config.cache.BaseRedisConfig;
+import com.pudge.cn.iot.common.redis.config.BaseRedisConfig;
 import org.springframework.context.annotation.Configuration;
 
 /**

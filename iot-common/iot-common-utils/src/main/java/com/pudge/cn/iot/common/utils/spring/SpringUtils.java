@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.utils.spring;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.util.Assert;

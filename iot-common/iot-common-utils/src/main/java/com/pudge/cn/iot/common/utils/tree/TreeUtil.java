@@ -1,6 +1,7 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.utils.tree;
 
 
+import com.pudge.cn.iot.common.utils.tree.ITreeNode;
 import org.springframework.util.CollectionUtils;
 
 import java.io.Serializable;

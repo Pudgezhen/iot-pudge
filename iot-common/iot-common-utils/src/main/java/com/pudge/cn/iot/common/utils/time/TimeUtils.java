@@ -1,4 +1,6 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.utils.time;
+
+import com.pudge.cn.iot.common.utils.number.NumberUtil;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -21,7 +23,7 @@ public class TimeUtils {
         if (time.length() == 1) {
             unit = 'd';
         }
-        Long lastTime = NumberHelper.longValueOf0(time.substring(0, time.length() - 1));
+        Long lastTime = NumberUtil.longValueOf0(time.substring(0, time.length() - 1));
 
         LocalDateTime passwordErrorLastTime = LocalDateTime.MAX;
         switch (unit) {

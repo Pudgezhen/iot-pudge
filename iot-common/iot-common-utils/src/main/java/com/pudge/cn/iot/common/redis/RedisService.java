@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.cache;
+package com.pudge.cn.iot.common.redis;
 
 import java.util.List;
 import java.util.Map;

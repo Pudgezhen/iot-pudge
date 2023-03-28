@@ -1,8 +1,7 @@
 package com.pudge.cn.iot.common.context;
 
 
-import com.pudge.cn.iot.common.utils.NumberHelper;
-import com.pudge.cn.iot.common.utils.StrHelper;
+import com.pudge.cn.iot.common.utils.number.NumberUtil;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -56,7 +55,7 @@ public class BaseContextHandler {
      */
     public static Long getUserId() {
         Object value = get(BaseContextConstants.JWT_KEY_USER_ID);
-        return NumberHelper.longValueOf0(value);
+        return NumberUtil.longValueOf0(value);
     }
 
     /**
@@ -69,7 +68,7 @@ public class BaseContextHandler {
     }
 
     public static void setUserId(String userId) {
-        setUserId(NumberHelper.longValueOf0(userId));
+        setUserId(NumberUtil.longValueOf0(userId));
     }
 
     /**
@@ -127,7 +126,7 @@ public class BaseContextHandler {
 
     public static Long getOrgId() {
         Object value = get(BaseContextConstants.JWT_KEY_ORG_ID);
-        return NumberHelper.longValueOf0(value);
+        return NumberUtil.longValueOf0(value);
     }
 
     public static void setOrgId(String val) {
@@ -137,7 +136,7 @@ public class BaseContextHandler {
 
     public static Long getStationId() {
         Object value = get(BaseContextConstants.JWT_KEY_STATION_ID);
-        return NumberHelper.longValueOf0(value);
+        return NumberUtil.longValueOf0(value);
     }
 
     public static void setStationId(String val) {

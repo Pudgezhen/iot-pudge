@@ -1,9 +1,8 @@
-package com.pudge.cn.iot.common.cache.impl;
+package com.pudge.cn.iot.common.redis.impl;
 
-import com.pudge.cn.iot.common.cache.RedisService;
+import com.pudge.cn.iot.common.redis.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;

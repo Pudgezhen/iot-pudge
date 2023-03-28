@@ -1,11 +1,11 @@
-package com.pudge.cn.iot.common.config.cache;
+package com.pudge.cn.iot.common.redis.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
-import com.pudge.cn.iot.common.cache.RedisService;
-import com.pudge.cn.iot.common.cache.impl.RedisServiceImpl;
+import com.pudge.cn.iot.common.redis.RedisService;
+import com.pudge.cn.iot.common.redis.impl.RedisServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;

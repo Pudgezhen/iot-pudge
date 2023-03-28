@@ -11,7 +11,6 @@ import com.pudge.cn.iot.common.entity.JwtAuthPayload;
 import org.springframework.util.StringUtils;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,7 +18,7 @@ import java.util.Map;
  * @description Excel 操作工具类
  * @Date 2023/3/13 22:51
  */
-
+// TODO 需要增加刷新令牌的方法
 public class JwtToken {
     //默认秘钥
     private static final String DEFAULT_SECRET="iotPudgeJwtDefaultSecret";
