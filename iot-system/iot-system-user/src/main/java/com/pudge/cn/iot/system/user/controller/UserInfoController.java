@@ -3,11 +3,9 @@ package com.pudge.cn.iot.system.user.controller;
 
 import com.pudge.cn.iot.api.user.entity.UserInfo;
 import com.pudge.cn.iot.common.constant.AuthConstant;
-import com.pudge.cn.iot.common.response.PudResult;
 import com.pudge.cn.iot.common.response.R;
 import com.pudge.cn.iot.common.utils.encipher.MD5Utils;
 import com.pudge.cn.iot.system.user.service.IUserInfoService;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,7 +47,6 @@ public class UserInfoController {
         if (flag){
             return R.success("注册成功");
         }else{
-            //TODO  添加 用户信息的 校验 以及 密码的 MD5加密
             return R.fail("注册失败");
         }
     }

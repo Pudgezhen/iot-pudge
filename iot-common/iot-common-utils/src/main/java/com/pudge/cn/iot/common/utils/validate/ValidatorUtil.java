@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.utils.validate;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

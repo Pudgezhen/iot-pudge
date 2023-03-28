@@ -3,7 +3,7 @@ package com.pudge.cn.iot.system.gateway.filters.globalfilter;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.pudge.cn.iot.api.auth.entity.Permission;
-import com.pudge.cn.iot.common.cache.RedisService;
+import com.pudge.cn.iot.common.redis.RedisService;
 import com.pudge.cn.iot.common.constant.AuthConstant;
 import com.pudge.cn.iot.common.entity.JwtAuthPayload;
 import com.pudge.cn.iot.common.utils.jwt.JwtToken;

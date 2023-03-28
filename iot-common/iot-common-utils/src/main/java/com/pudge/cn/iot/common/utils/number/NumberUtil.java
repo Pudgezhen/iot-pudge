@@ -1,4 +1,4 @@
-package com.pudge.cn.iot.common.utils;
+package com.pudge.cn.iot.common.utils.number;
 
 import java.util.function.Function;
 
@@ -7,7 +7,7 @@ import java.util.function.Function;
  * 数字类型 帮助类
  *
  */
-public class NumberHelper {
+public class NumberUtil {
 
     private static <T, R> R valueOfDef(T t, Function<T, R> function, R def) {
         try {
