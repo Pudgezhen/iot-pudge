@@ -1,23 +1,12 @@
 #当前服务端口号
 server:
   port: 9002
-#  servlet:
-#    #配置上下文对象  访问的项目名称
-#    context-path: /ordera
-#阿里druid连接池配置
+
+
 spring:
-  boot:
-    admin:
-      client:
-        url: 127.0.0.1:9005
+
   cloud:
     nacos:
-      discovery:
-        server-addr: www.bitegatti.com:8848
-        group: iot
-        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
-        username: nacos
-        password: Csjava666
       config:
         username: nacos
         password: Csjava666
@@ -26,37 +15,15 @@ spring:
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
 
-  datasource:
-    druid:
-      url: jdbc:mysql://www.bitegatti.com:13306/iot_device?characterEncoding=UTF-8&useSSL=false&useUnicode=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
-      username: root
-      password: CsPudge666
-      initial-size: 5
-      max-active: 20
-      min-idle: 10
-      max-wait: 10
 
   application:
     name: iot-device
   profiles:
     active: dev
 
-  redis:
-    port: 16379
-    host: www.bitegatti.com
-    password: CsPudge666
 
 
-mybatis-plus:
-  # mapper.xml配置
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    #控制台日志输出配置
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    #下划线转驼峰
-    map-underscore-to-camel-case: true
-  #别名包配置
-  type-aliases-package:
+
 
 ####swagger配置
 #swagger:
@@ -70,9 +37,4 @@ mybatis-plus:
 #    url: "https://www.baidu.com"
 #  terms-of-service-url: "服务条款：https://www.baidu.com"
 
-# 暴露监控端点
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
+

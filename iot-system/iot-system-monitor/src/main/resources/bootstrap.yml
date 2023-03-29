@@ -1,11 +1,9 @@
 
-
 spring:
   application:
-    name: iot-gateway
+    name: iot-monitor
   profiles:
     active: dev
-
   cloud:
     nacos:
       config:
@@ -15,8 +13,6 @@ spring:
         file-extension: yaml
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
-
-
 
 
 

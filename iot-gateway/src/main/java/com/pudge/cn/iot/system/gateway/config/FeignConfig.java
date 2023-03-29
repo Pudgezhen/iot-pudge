@@ -11,16 +11,16 @@ import java.util.stream.Collectors;
 
 /**
  * @author mu_zhen
- * @description Excel 操作工具类
+ * @description  gateway 拦截器中若调用其他服务需添加的配置，暂时无用
  * @Date 2023/3/22 23:32
  */
 
 @Configuration
 public class FeignConfig {
-    @Bean
-    @ConditionalOnMissingBean
-    public HttpMessageConverters messageConverters(ObjectProvider<HttpMessageConverter<?>> converters) {
-        return new HttpMessageConverters(converters.orderedStream().collect(Collectors.toList()));
-    }
+//    @Bean
+//    @ConditionalOnMissingBean
+//    public HttpMessageConverters messageConverters(ObjectProvider<HttpMessageConverter<?>> converters) {
+//        return new HttpMessageConverters(converters.orderedStream().collect(Collectors.toList()));
+//    }
 }
 
