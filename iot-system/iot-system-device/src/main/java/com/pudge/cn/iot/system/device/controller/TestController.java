@@ -24,7 +24,7 @@ public class TestController {
     @ApiOperation(value = "测试获取", notes = "测试Get")
     public String test() {
 
-        return "ok";
+        return "ok"+name;
     }
 
 }
