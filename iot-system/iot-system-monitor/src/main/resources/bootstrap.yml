@@ -1,3 +1,6 @@
+#当前服务端口号
+server:
+  port: 9005
 
 spring:
   application:
