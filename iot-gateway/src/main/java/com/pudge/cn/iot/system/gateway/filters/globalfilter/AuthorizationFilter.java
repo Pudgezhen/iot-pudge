@@ -2,6 +2,7 @@ package com.pudge.cn.iot.system.gateway.filters.globalfilter;
 
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
+import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.pudge.cn.iot.api.auth.entity.Permission;
 import com.pudge.cn.iot.common.redis.RedisService;
 import com.pudge.cn.iot.common.constant.AuthConstant;
@@ -65,7 +66,14 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         }
         //从token中解析用户信息并设置到Header中去
         String realToken = token.replace(AuthConstant.JWT_TOKEN_PREFIX, "");
-        JwtAuthPayload payload = JwtToken.parseToken(realToken);
+        JwtAuthPayload payload = null;
+        try {
+            payload = JwtToken.parseToken(realToken);
+        }catch (TokenExpiredException e){
+            log.error("Token: " + e.getMessage());
+            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+            return exchange.getResponse().setComplete();
+        }
         String userStr = JSONObject.toJSONString(payload);
         log.info("AuthGlobalFilter.filter() user:{}",userStr);
         String ip = exchange.getRequest().getRemoteAddress().getHostString();
