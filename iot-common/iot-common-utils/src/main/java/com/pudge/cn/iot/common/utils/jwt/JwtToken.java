@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.pudge.cn.iot.common.entity.JwtAuthPayload;
 import org.springframework.util.StringUtils;
@@ -71,7 +72,7 @@ public class JwtToken {
      * @param token
      * @return
      */
-    public static JwtAuthPayload parseToken(String token,String secret){
+    public static JwtAuthPayload parseToken(String token,String secret) throws TokenExpiredException {
         //秘钥为空就采用默认秘钥
         if(StringUtils.isEmpty(secret)){
             secret = DEFAULT_SECRET;
