@@ -16,10 +16,7 @@ spring:
         file-extension: yaml
         group: iot
         namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
-    sentinel:
-      eager: true
-      transport:
-        dashboard: 120.48.101.27:8999
+
 
 
 
