@@ -13,6 +13,10 @@
     <packaging>pom</packaging>
     <description>IoT 公共工程</description>
 
+    <modules>
+        <module>iot-common-utils</module>
+        <module>iot-common-dependencies</module>
+    </modules>
     <dependencies>
 
     </dependencies>
