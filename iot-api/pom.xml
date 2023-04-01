@@ -9,6 +9,8 @@
     </parent>
     <modules>
         <module>iot-api-user</module>
+        <module>iot-api-auth</module>
+        <module>iot-api-device</module>
     </modules>
     <artifactId>iot-api</artifactId>
     <version>0.1</version>
