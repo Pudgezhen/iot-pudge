@@ -74,6 +74,14 @@
 
     </dependencies>
 
+
+    <distributionManagement>
+        <repository>
+            <id>pudgeNexusUp</id>
+            <url>http://120.48.101.27:8081/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
     <!--版本管理-->
     <dependencyManagement>
         <dependencies>
