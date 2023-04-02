@@ -90,20 +90,20 @@ public class JwtToken {
      * 令牌校验解析
      * @param args
      */
-    public static void main(String[] args) {
-        JwtAuthPayload payload = new JwtAuthPayload();
-        payload.setIp("127.0.0.1");
-        payload.setRoleid("1,2");
-        payload.setUsername("王桢");
-
-
-
-        //创建令牌
-        String token = createToken(payload);
-        System.out.println(token);
-
-        //解析令牌
-        JwtAuthPayload jwtAuthPayload =parseToken(token);
-        System.out.println(JSONObject.toJSONString(jwtAuthPayload));
-    }
+//    public static void main(String[] args) {
+//        JwtAuthPayload payload = new JwtAuthPayload();
+//        payload.setIp("127.0.0.1");
+//        payload.setRoleid("1,2");
+//        payload.setUsername("王桢");
+//
+//
+//
+//        //创建令牌
+//        String token = createToken(payload);
+//        System.out.println(token);
+//
+//        //解析令牌
+//        JwtAuthPayload jwtAuthPayload =parseToken(token);
+//        System.out.println(JSONObject.toJSONString(jwtAuthPayload));
+//    }
 }

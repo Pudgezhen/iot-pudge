@@ -12,13 +12,8 @@
     <version>0.1</version>
     <name>iot-api-device</name>
     <description>device 的api工程</description>
-    <packaging>pom</packaging>
     <dependencies>
-        <dependency>
-            <groupId>com.pudge.cn</groupId>
-            <artifactId>iot-common-utils</artifactId>
-            <version>0.1</version>
-        </dependency>
+
     </dependencies>
 
 
