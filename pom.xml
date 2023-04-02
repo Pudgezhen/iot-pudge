@@ -76,8 +76,12 @@
 
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>pudgeNexus-snapshot</id>
+            <url>http://120.48.101.27:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
         <repository>
-            <id>pudgeNexusUp</id>
+            <id>pudgeNexus-release</id>
             <url>http://120.48.101.27:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
@@ -154,11 +158,6 @@
                 <scope>test</scope>
             </dependency>
             <!--druid 连接池  其他常用连接池：dbcp  c3p0  proxool  -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>druid-spring-boot-starter</artifactId>
-                <version>${druid.version}</version>
-            </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid-spring-boot-starter</artifactId>
@@ -243,14 +242,5 @@
     </dependencyManagement>
 
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.3.2.RELEASE</version>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

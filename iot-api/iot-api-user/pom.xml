@@ -12,7 +12,6 @@
     <version>0.1</version>
     <name>iot-api-user</name>
     <description>IoT user-api 工程</description>
-    <packaging>pom</packaging>
     <dependencies>
 
     </dependencies>

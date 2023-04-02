@@ -71,6 +71,7 @@
             <groupId>com.pudge.cn</groupId>
             <artifactId>iot-common-dependencies</artifactId>
             <version>0.1</version>
+            <type>pom</type>
         </dependency>
     </dependencies>
 
