@@ -30,11 +30,12 @@ import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 /**
  * @author mu_zhen
- * @description 权限认证   TODO 增加response 的msg
+ * @description 权限认证
  * @Date 2023/3/16 10:10
  */
 @Slf4j
@@ -70,7 +71,7 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         }
         //从token中解析用户信息并设置到Header中去
         String realToken = token.replace(AuthConstant.JWT_TOKEN_PREFIX, "");
-        JwtAuthPayload payload = null;
+        JwtAuthPayload payload;
         try {
             payload = JwtToken.parseToken(realToken);
         }catch (TokenExpiredException e){
@@ -80,7 +81,7 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         }
         String userStr = JSONObject.toJSONString(payload);
         log.info("AuthGlobalFilter.filter() user:{}",userStr);
-        String ip = exchange.getRequest().getRemoteAddress().getHostString();
+        String ip = Objects.requireNonNull(exchange.getRequest().getRemoteAddress()).getHostString();
         log.info("获取的ip："+ ip);
         // 防止登录之后的token被盗用，加一层ip校验
         if (!ip.equals(payload.getIp())){
@@ -112,13 +113,11 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
      * @param status  返回的code 状态码
      * @param message  返回的 具体信息
      * @param response response 载体
-     * @return
+     * @return 直接返回拦截
      */
     private Mono<Void> returnMessage(int status, String message, ServerHttpResponse response){
         // 封装返回参数
-        R r = new R(status,null,message);
-
-        byte[] bytes = JSONObject.toJSONString(r).getBytes(StandardCharsets.UTF_8);
+        byte[] bytes = JSONObject.toJSONString(R.fail(status,message)).getBytes(StandardCharsets.UTF_8);
 
         DataBuffer buffer = response.bufferFactory().wrap(bytes);
 
@@ -127,11 +126,11 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
 
     /**
      * 完全匹配校验
-     * @param permissionsMatch0
-     * @param uri
-     * @param method
-     * @param serviceName
-     * @return
+     * @param permissionsMatch0 权限列表
+     * @param uri uri
+     * @param method GET / POST http 请求方法
+     * @param serviceName 服务名称
+     * @return 返回匹配到的权限信息
      */
     private Permission matchUri(List<Permission> permissionsMatch0
                                         ,String uri,String method
@@ -154,9 +153,9 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
 
     /**
      * 对请求做权限校验  AntPathMatcher
-     * @param exchange
-     * @param userInfo
-     * @return
+     * @param exchange 路由信息
+     * @param userInfo JWT封装的用户信息
+     * @return true 表示权限认证通过
      */
     private Boolean hasRolePermission(ServerWebExchange exchange,JwtAuthPayload userInfo){
         ServerHttpRequest request = exchange.getRequest();
@@ -166,6 +165,7 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         String method = request.getMethodValue();
         // 获取服务名字
         Route router = exchange.getAttribute(ServerWebExchangeUtils.GATEWAY_ROUTE_ATTR);
+        assert router != null;
         String serviceName = router.getId();
 
         String[] roles = userInfo.getRoleid().split(",");
