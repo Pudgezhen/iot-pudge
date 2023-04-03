@@ -7,6 +7,7 @@ import com.pudge.cn.iot.api.auth.entity.Permission;
 import com.pudge.cn.iot.common.redis.RedisService;
 import com.pudge.cn.iot.common.constant.AuthConstant;
 import com.pudge.cn.iot.common.entity.JwtAuthPayload;
+import com.pudge.cn.iot.common.response.R;
 import com.pudge.cn.iot.common.utils.jwt.JwtToken;
 import com.pudge.cn.iot.system.gateway.config.IgnoreUrlsConfig;
 import lombok.extern.slf4j.Slf4j;
@@ -16,14 +17,17 @@ import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.cloud.gateway.route.Route;
 import org.springframework.cloud.gateway.support.ServerWebExchangeUtils;
 import org.springframework.core.Ordered;
+import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.server.reactive.ServerHttpRequest;
+import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 import java.net.URI;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -62,7 +66,7 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         // 对于 免登录的 页面 url 已在白名单校验，所有先判断token
         if (StrUtil.isEmpty(token)) {
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
+            return returnMessage(401,"token 不允许为空！", exchange.getResponse());
         }
         //从token中解析用户信息并设置到Header中去
         String realToken = token.replace(AuthConstant.JWT_TOKEN_PREFIX, "");
@@ -81,7 +85,7 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         // 防止登录之后的token被盗用，加一层ip校验
         if (!ip.equals(payload.getIp())){
             exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return exchange.getResponse().setComplete();
+            return returnMessage(401,"ip校验不通过", exchange.getResponse());
         }
 
         // 对请求做权限校验
@@ -103,7 +107,23 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         return 0;
     }
 
+    /**
+     *  封装 信息返回前端
+     * @param status  返回的code 状态码
+     * @param message  返回的 具体信息
+     * @param response response 载体
+     * @return
+     */
+    private Mono<Void> returnMessage(int status, String message, ServerHttpResponse response){
+        // 封装返回参数
+        R r = new R(status,null,message);
 
+        byte[] bytes = JSONObject.toJSONString(r).getBytes(StandardCharsets.UTF_8);
+
+        DataBuffer buffer = response.bufferFactory().wrap(bytes);
+
+        return response.writeWith(Mono.just(buffer));
+    }
 
     /**
      * 完全匹配校验
