@@ -15,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>com.pudge.cn</groupId>
-            <artifactId>iot-api-user</artifactId>
+            <artifactId>iot-api</artifactId>
             <version>0.1</version>
         </dependency>
 
