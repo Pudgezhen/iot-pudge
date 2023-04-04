@@ -7,15 +7,10 @@
         <artifactId>iot-pudge</artifactId>
         <version>0.1</version>
     </parent>
-    <modules>
-        <module>iot-api-user</module>
-        <module>iot-api-auth</module>
-        <module>iot-api-device</module>
-    </modules>
+
     <artifactId>iot-api</artifactId>
     <version>0.1</version>
     <name>iot-api</name>
-    <packaging>pom</packaging>
     <description>IoT api 工程</description>
 
     <dependencies>
