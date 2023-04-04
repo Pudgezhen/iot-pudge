@@ -74,14 +74,9 @@
 
     </dependencies>
 
-
     <distributionManagement>
-        <snapshotRepository>
-            <id>pudgeNexus-snapshot</id>
-            <url>http://120.48.101.27:8081/repository/maven-snapshots/</url>
-        </snapshotRepository>
         <repository>
-            <id>pudgeNexus-release</id>
+            <id>pudgeNexusUp</id>
             <url>http://120.48.101.27:8081/repository/maven-releases/</url>
         </repository>
     </distributionManagement>
