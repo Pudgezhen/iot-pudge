@@ -83,11 +83,11 @@ public class AuthorizationFilter implements Ordered, GlobalFilter {
         log.info("AuthGlobalFilter.filter() user:{}",userStr);
         String ip = Objects.requireNonNull(exchange.getRequest().getRemoteAddress()).getHostString();
         log.info("获取的ip："+ ip);
-        // 防止登录之后的token被盗用，加一层ip校验
-        if (!ip.equals(payload.getIp())){
-            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
-            return returnMessage(401,"ip校验不通过", exchange.getResponse());
-        }
+        // 防止登录之后的token被盗用，加一层ip校验  TODO 目前获取的ip对不上，需要调整
+//        if (!ip.equals(payload.getIp())){
+//            exchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED);
+//            return returnMessage(401,"ip校验不通过", exchange.getResponse());
+//        }
 
         // 对请求做权限校验
         if(!hasRolePermission(exchange,payload)){
