@@ -3,10 +3,10 @@ package com.pudge.cn.iot.system.device.controller;
 
 
 import com.pudge.cn.iot.common.response.R;
-import com.pudge.cn.iot.system.device.config.PudgeMQTTProvider;
+import com.pudge.cn.iot.system.device.config.PuMQTTProvider;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.mqttv5.common.MqttException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class TestController {
 
     @Autowired
-    private PudgeMQTTProvider pudgeMQTTProvider;
+    private PuMQTTProvider puMQTTProvider;
 
 
 
@@ -30,7 +30,7 @@ public class TestController {
     @ApiOperation(value = "测试获取", notes = "测试Get")
     public R test() throws MqttException {
 
-        return R.success(pudgeMQTTProvider.publish("hhaha"));
+        return R.success(puMQTTProvider.publish("test","hahah",0,false));
     }
 
 }
