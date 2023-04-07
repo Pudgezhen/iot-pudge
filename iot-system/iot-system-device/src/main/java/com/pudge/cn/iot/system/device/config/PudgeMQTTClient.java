@@ -1,14 +1,16 @@
 package com.pudge.cn.iot.system.device.config;
 
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttTopic;
-import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
+
+import lombok.extern.slf4j.Slf4j;
+import org.eclipse.paho.mqttv5.client.*;
+import org.eclipse.paho.mqttv5.client.persist.MemoryPersistence;
+import org.eclipse.paho.mqttv5.common.MqttException;
+import org.eclipse.paho.mqttv5.common.MqttMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Condition;
 import org.springframework.stereotype.Component;
+
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author mu_zhen
@@ -16,26 +18,35 @@ import org.springframework.stereotype.Component;
  * @Date 2023/4/6 11:04
  */
 @Component
+@Slf4j
 public class PudgeMQTTClient {
 
     @Autowired
     private MQTTConfig mqttConfig;
 
+    @Autowired
+    private PuCallBack puCallBack;
+
+
     @Bean
-    public MqttTopic createMQTTClient(MqttConnectOptions connOpts) throws MqttException {
+    public MqttAsyncClient createMQTTClient(MqttConnectionOptions connOpts) throws MqttException {
         MemoryPersistence persistence = new MemoryPersistence();
 
-        MqttClient mqttClient =  new MqttClient(mqttConfig.getBroker(),mqttConfig.getClientId(),persistence);
-        mqttClient.connect(connOpts);
-        MqttTopic mqttTopic = mqttClient.getTopic(mqttConfig.getTopic());
-        return mqttTopic;
+        MqttAsyncClient MqttAsyncClient =  new MqttAsyncClient(mqttConfig.getBroker(),mqttConfig.getClientId(),persistence);
+        MqttAsyncClient.setCallback(puCallBack);
+        IMqttToken token = MqttAsyncClient.connect(connOpts);
+        token.waitForCompletion();
+        log.info("mqtt is connected......");
+        MqttAsyncClient.subscribe("test2",0);
+        return MqttAsyncClient;
     }
 
     @Bean
-    public MqttConnectOptions createMqttConnectOptions(){
-        MqttConnectOptions connOpts = new MqttConnectOptions();
+    public MqttConnectionOptions createMqttConnectOptions(){
+        MqttConnectionOptions connOpts = new MqttConnectionOptions();
         // 在重新启动和重新连接时记住状态 TODO 后续灵活添加更多设置
-        connOpts.setCleanSession(false);
+        connOpts.setCleanStart(false);
+        connOpts.setWill("disconnect",new MqttMessage(mqttConfig.getClientId().getBytes(StandardCharsets.UTF_8)));
         return connOpts;
     }
 
