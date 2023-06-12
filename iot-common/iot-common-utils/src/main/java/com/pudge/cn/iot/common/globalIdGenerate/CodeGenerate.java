@@ -8,7 +8,6 @@ import java.util.concurrent.atomic.AtomicLong;
  * 3、支持最大16台机器的分布
  * 4、长度都是8位的字符串
  * 5、编码全部是大写字符，因为数据库一般期望不区分大小写
- *
  */
 public class CodeGenerate {
 

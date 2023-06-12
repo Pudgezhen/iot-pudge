@@ -8,7 +8,6 @@ import java.net.URLEncoder;
 
 /**
  * 字符串帮助类
- *
  */
 @Slf4j
 public class StrHelper {

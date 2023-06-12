@@ -32,12 +32,12 @@ public interface AuthConstant {
     String USER_TOKEN_HEADER = "user";
 
     /**
-     *  用户JWT令牌在redis的前缀
+     * 用户JWT令牌在redis的前缀
      */
     String JWT_REDIS_PREFIX = "jwt:";
 
     /**
-     *  MD5加密盐值
+     * MD5加密盐值
      */
     String MD5_DEFAULT_SALT = "iotPudgeDefaultSalt";
 }

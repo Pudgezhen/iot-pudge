@@ -22,24 +22,24 @@ import java.util.Map;
 // TODO 需要增加刷新令牌的方法
 public class JwtToken {
     //默认秘钥
-    private static final String DEFAULT_SECRET="iotPudgeJwtDefaultSecret";
+    private static final String DEFAULT_SECRET = "iotPudgeJwtDefaultSecret";
 
     /***
      * 生成令牌
      * @param payload
      * @return
      */
-    public static String createToken(JwtAuthPayload payload){
-        return createToken(payload,null);
+    public static String createToken(JwtAuthPayload payload) {
+        return createToken(payload, null);
     }
 
     /***
      * 生成令牌
      * @return
      */
-    public static String createToken(JwtAuthPayload payload,String secret){
+    public static String createToken(JwtAuthPayload payload, String secret) {
         //秘钥为空就采用默认秘钥
-        if(StringUtils.isEmpty(secret)){
+        if (StringUtils.isEmpty(secret)) {
             secret = DEFAULT_SECRET;
         }
 
@@ -47,14 +47,14 @@ public class JwtToken {
         Algorithm algorithm = Algorithm.HMAC256(secret);
         //创建令牌
         return JWT.create()
-                .withClaim("body", JSONObject.parseObject(JSONObject.toJSONString(payload),Map.class))
+                .withClaim("body", JSONObject.parseObject(JSONObject.toJSONString(payload), Map.class))
                 .withIssuer("pudge")            //JWT签发者
                 .withSubject("JWT令牌")       //主题
                 .withAudience("member")      //接收JWT的一方
-                .withExpiresAt(new Date(System.currentTimeMillis()+3600000))    //过期时间   ms
+                .withExpiresAt(new Date(System.currentTimeMillis() + 3600000))    //过期时间   ms
                 .withNotBefore(new Date(System.currentTimeMillis()))      //指定时间之前JWT令牌是不可用的
                 .withIssuedAt(new Date())    //JWT签发时间
-                .withJWTId(UUID.randomUUID().toString().replace("-","")) // jwt唯一标识
+                .withJWTId(UUID.randomUUID().toString().replace("-", "")) // jwt唯一标识
                 .sign(algorithm);
     }
 
@@ -63,8 +63,8 @@ public class JwtToken {
      * @param token
      * @return
      */
-    public static JwtAuthPayload parseToken(String token){
-        return parseToken(token,null);
+    public static JwtAuthPayload parseToken(String token) {
+        return parseToken(token, null);
     }
 
     /***
@@ -72,9 +72,9 @@ public class JwtToken {
      * @param token
      * @return
      */
-    public static JwtAuthPayload parseToken(String token,String secret) throws TokenExpiredException {
+    public static JwtAuthPayload parseToken(String token, String secret) throws TokenExpiredException {
         //秘钥为空就采用默认秘钥
-        if(StringUtils.isEmpty(secret)){
+        if (StringUtils.isEmpty(secret)) {
             secret = DEFAULT_SECRET;
         }
         //确认签名算法
