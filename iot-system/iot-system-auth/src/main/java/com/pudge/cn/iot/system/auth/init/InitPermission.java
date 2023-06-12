@@ -56,7 +56,7 @@ public class InitPermission implements ApplicationRunner {
         // 每个角色拥有哪些权限  存入 容器中
         // 分为完全匹配  和  通配符匹配
         Map<String, Set<Permission>> rolePermissionMapping = new HashMap<>();
-        
+
         //循环所有的角色关系映射
         for (RolePermission rolePermission : rolePermissions) {
             int rid = rolePermission.getRid();

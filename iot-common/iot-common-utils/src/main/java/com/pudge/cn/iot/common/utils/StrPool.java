@@ -2,7 +2,6 @@ package com.pudge.cn.iot.common.utils;
 
 /**
  * 常用字符串
- *
  */
 public interface StrPool {
     String AMPERSAND = "&";

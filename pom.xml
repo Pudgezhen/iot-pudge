@@ -71,7 +71,6 @@
         </dependency>
 
 
-
     </dependencies>
 
     <distributionManagement>
@@ -235,7 +234,6 @@
         </dependencies>
 
     </dependencyManagement>
-
 
 
 </project>

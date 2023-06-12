@@ -2,7 +2,6 @@ package com.pudge.cn.iot.common.context;
 
 /**
  * 常量工具类
- *
  */
 public class BaseContextConstants {
     /**

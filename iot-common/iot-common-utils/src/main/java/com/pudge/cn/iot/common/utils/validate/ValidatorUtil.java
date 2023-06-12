@@ -5,7 +5,6 @@ import java.util.regex.Pattern;
 
 /**
  * 校验器：利用正则表达式校验邮箱、手机号等
- *
  */
 public class ValidatorUtil {
 

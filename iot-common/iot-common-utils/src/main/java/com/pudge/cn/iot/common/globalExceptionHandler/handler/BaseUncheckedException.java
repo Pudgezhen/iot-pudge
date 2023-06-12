@@ -31,7 +31,7 @@ public class BaseUncheckedException extends RuntimeException implements BaseExce
         this.code = code;
         this.message = String.format(format, args);
     }
-	
+
 
     @Override
     public String getMessage() {

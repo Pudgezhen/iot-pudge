@@ -4,6 +4,7 @@ import com.pudge.cn.iot.common.context.BaseContextHandler;
 import com.pudge.cn.iot.common.globalExceptionHandler.handler.BizException;
 import com.pudge.cn.iot.common.globalExceptionHandler.code.BaseExceptionCode;
 import com.pudge.cn.iot.common.utils.number.NumberUtil;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * SuperController
- *
  */
 public abstract class BaseController {
     @Resource

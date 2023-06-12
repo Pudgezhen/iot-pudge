@@ -5,7 +5,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 抽象 ID 生成器
- *
  */
 public abstract class AbstractIdGenerate<T extends Serializable> implements IdGenerate<T> {
 

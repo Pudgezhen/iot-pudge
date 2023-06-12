@@ -5,7 +5,6 @@ import java.util.function.Function;
 
 /**
  * 数字类型 帮助类
- *
  */
 public class NumberUtil {
 

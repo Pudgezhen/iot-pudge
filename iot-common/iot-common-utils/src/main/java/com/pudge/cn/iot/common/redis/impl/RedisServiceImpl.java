@@ -19,10 +19,11 @@ public class RedisServiceImpl implements RedisService {
     private RedisTemplate<String, Object> redisTemplate;
 
     /**
-     *  添加缓存：String  ，超时单位：s
-     * @param key key
+     * 添加缓存：String  ，超时单位：s
+     *
+     * @param key   key
      * @param value value
-     * @param time 超时时间s
+     * @param time  超时时间s
      */
     @Override
     public void set(String key, Object value, long time) {
