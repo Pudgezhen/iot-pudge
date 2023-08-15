@@ -9,11 +9,11 @@ spring:
     nacos:
       config:
         username: nacos
-        password: Csjava666
+        password: nacos
         server-addr: www.bitegatti.com:8848
         file-extension: yaml
         group: iot
-        namespace: 26aea06d-dc42-44fc-9427-744eafa06bb2
+        namespace: 56c2ef33-1ccc-498a-941a-ed1bd9382104
 
 
   application:
