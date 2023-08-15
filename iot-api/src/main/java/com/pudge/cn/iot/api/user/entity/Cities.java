@@ -27,8 +27,8 @@ public class Cities implements Serializable {
     /**
      * 城市ID
      */
-    @TableId(value = "cityid", type = IdType.ASSIGN_ID)
-    private String cityid;
+    @TableId(value = "city_id", type = IdType.ASSIGN_ID)
+    private String cityId;
 
     /**
      * 城市名称
@@ -39,8 +39,8 @@ public class Cities implements Serializable {
     /**
      * 省份ID
      */
-    @TableField("provinceid")
-    private String provinceid;
+    @TableField("province_id")
+    private String provinceId;
 
 
 }

@@ -24,7 +24,7 @@ public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "globalIdGenerate", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
@@ -36,20 +36,20 @@ public class Address implements Serializable {
     /**
      * 省
      */
-    @TableField("provinceid")
-    private String provinceid;
+    @TableField("province_id")
+    private String provinceId;
 
     /**
      * 市
      */
-    @TableField("cityid")
-    private String cityid;
+    @TableField("city_id")
+    private String cityId;
 
     /**
      * 县/区
      */
-    @TableField("areaid")
-    private String areaid;
+    @TableField("area_id")
+    private String areaId;
 
     /**
      * 电话

@@ -148,25 +148,25 @@ public class UserInfo implements Serializable {
     /**
      * 省份ID
      */
-    @TableField("provinceid")
-    private String provinceid;
+    @TableField("province_id")
+    private String provinceId;
 
     /**
      * 城市ID
      */
-    @TableField("cityid")
-    private String cityid;
+    @TableField("city_id")
+    private String cityId;
 
     /**
      * 地区ID
      */
-    @TableField("areaid")
-    private String areaid;
+    @TableField("area_id")
+    private String areaId;
 
     /**
      * 角色Id
      */
-    @TableField("roleid")
-    private String roleid;
+    @TableField("role_id")
+    private String roleId;
 
 }

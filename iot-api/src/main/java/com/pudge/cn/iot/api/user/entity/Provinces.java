@@ -27,8 +27,8 @@ public class Provinces implements Serializable {
     /**
      * 省份ID
      */
-    @TableId(value = "provinceid", type = IdType.ASSIGN_ID)
-    private String provinceid;
+    @TableId(value = "province_id", type = IdType.ASSIGN_ID)
+    private String provinceId;
 
     /**
      * 省份名称

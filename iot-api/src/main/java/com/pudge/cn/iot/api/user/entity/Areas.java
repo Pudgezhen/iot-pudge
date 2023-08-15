@@ -27,8 +27,8 @@ public class Areas implements Serializable {
     /**
      * 区域ID
      */
-    @TableId(value = "areaid", type = IdType.ASSIGN_ID)
-    private String areaid;
+    @TableId(value = "area_id", type = IdType.ASSIGN_ID)
+    private String areaId;
 
     /**
      * 区域名称
@@ -39,8 +39,8 @@ public class Areas implements Serializable {
     /**
      * 城市ID
      */
-    @TableField("cityid")
-    private String cityid;
+    @TableField("city_id")
+    private String cityId;
 
 
 }
