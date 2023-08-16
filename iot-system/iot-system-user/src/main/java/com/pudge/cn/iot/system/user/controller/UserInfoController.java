@@ -50,18 +50,16 @@ public class UserInfoController {
         userInfo.setUpdated(new Date());
         boolean flag = userInfoService.updateById(userInfo);
         if (flag){
-            return R.success("注册成功");
+            return R.success("修改成功");
         }else{
-            return R.fail("注册失败");
+            return R.fail("修改失败");
         }
     }
 
     @GetMapping("getUser")
     @SentinelResource(value = "getUser",entryType = EntryType.IN,blockHandler = "blockHandler",fallback = "fallback")
     public UserInfo getUser(@RequestParam("username") String username){
-
-        return new UserInfo();
-//        return userInfoService.getById(username);
+        return userInfoService.getById(username);
     }
 
     public UserInfo blockHandler(@RequestParam("username") String username,BlockException ex){

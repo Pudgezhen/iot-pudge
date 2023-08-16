@@ -6,7 +6,6 @@ package com.pudge.cn.iot.system.device.controller;
 import com.alibaba.csp.sentinel.EntryType;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.alibaba.csp.sentinel.slots.block.BlockException;
-import com.alibaba.fastjson.JSONObject;
 import com.pudge.cn.iot.api.user.feign.UserService;
 import com.pudge.cn.iot.common.response.R;
 import com.pudge.cn.iot.system.device.config.PuMQTTProvider;
@@ -33,7 +32,6 @@ public class TestController {
     @Autowired
     private UserService userService;
 
-    private boolean b = true;
 
     @Value("${iot.name}")
     private String name;
@@ -42,10 +40,10 @@ public class TestController {
     @GetMapping("/test")
     @ApiOperation(value = "测试获取", notes = "测试Get")
     public R test() throws MqttException {
-//        while (b){userService.getUser(name);}
 
-//        return R.success(userService.getUser(name));
-        return R.success(puMQTTProvider.publish("light","hahah",0,false));
+
+        return R.success(userService.getUser(name));
+//        return R.success(puMQTTProvider.publish("light","hahah",0,false));
     }
 
     public R blockHandler(BlockException ex){
