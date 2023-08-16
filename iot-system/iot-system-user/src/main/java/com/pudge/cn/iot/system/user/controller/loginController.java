@@ -44,7 +44,7 @@ public class loginController {
         // 封装Jwt
         JwtAuthPayload payload = new JwtAuthPayload();
         payload.setUsername(username);
-        payload.setRoleid(userInfo.getRoleid());
+        payload.setRoleid(userInfo.getRoleId());
         payload.setIp(ip);
         return R.success(JwtToken.createToken(payload));
     }

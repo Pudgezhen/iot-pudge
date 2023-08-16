@@ -28,11 +28,10 @@ public class InitPermission implements ApplicationRunner {
 
     /**
      * 权限初始化加载
-     * @param args
-     * @throws Exception
+     * @param args 无
      */
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         //加载所有权限   0：完全匹配    1：通配符匹配
         List<Permission> match0 = permissionService.findByMatch(0);
         List<Permission> match1 = permissionService.findByMatch(1);
