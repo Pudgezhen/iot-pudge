@@ -19,16 +19,23 @@ public class PuMQTTProvider {
     @Autowired
     private MqttAsyncClient MqttClient;
 
-    public String publish(String topic,String msg,int qos,boolean isRetained) throws MqttException {
+    public boolean publish(String topic,String msg,int qos,boolean isRetained) throws MqttException {
         MqttMessage message = new MqttMessage(msg.getBytes());
         message.setQos(qos);
         message.setRetained(isRetained);
 
         IMqttToken token = MqttClient.publish(topic,message);
         token.waitForCompletion();
-        return "已经发送成功:"+token.isComplete();
+        return token.isComplete();
     }
 
+    public String publishAsyn(String topic,String msg,int qos,boolean isRetained) throws MqttException {
+        MqttMessage message = new MqttMessage(msg.getBytes());
+        message.setQos(qos);
+        message.setRetained(isRetained);
 
+        IMqttToken token = MqttClient.publish(topic,message);
+        return "已经发送成功:"+token.isComplete();
+    }
 
 }
