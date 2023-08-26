@@ -6,7 +6,6 @@ package com.pudge.cn.iot.api.device.enumeration;
  * @Date 2023/8/24 9:36
  */
 
-import org.apache.http.annotation.Contract;
 
 /**
  * 用于指明设备操作类型

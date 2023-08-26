@@ -37,6 +37,8 @@ public class UserInfoController {
         userInfo.setCreated(new Date());
         userInfo.setUpdated(new Date());
         userInfo.setPassword(MD5Utils.getMD5Str(userInfo.getPassword()+ AuthConstant.MD5_DEFAULT_SALT));
+        //  测试  默认为1
+        userInfo.setRoleId("1");
         boolean flag = userInfoService.save(userInfo);
         if (flag){
             return R.success("注册成功");
