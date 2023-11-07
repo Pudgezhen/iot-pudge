@@ -14,7 +14,7 @@ vi /data/redis/conf/redis.conf
 https://www.redis.net.cn/tutorial/3504.html
  
  
-requirepass CsPudge666 连接密码
+requirepass keystoiot 连接密码
 
 4.启动
-docker run --name=redis --volume=/usr/etc/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf --volume=/usr/etc/redis/data:/data --volume=/data --workdir=/data -p 6379:6379 --restart=no --detach=true redis redis-server /usr/local/etc/redis/redis.conf --appendonly yes
+docker run --name=redis --volume=/usr/etc/redis/conf/redis.conf:/usr/local/etc/redis/redis.conf --volume=/usr/etc/redis/data:/data --volume=/data --workdir=/data -p 6379:6379 --restart=always --detach=true redis redis-server /usr/local/etc/redis/redis.conf --appendonly yes

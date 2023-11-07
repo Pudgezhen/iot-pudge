@@ -4,17 +4,17 @@
 docker pull nacos/nacos-server:v2.1.1
 #创建nacos 配置目录
  
-mkdir /home/nacos/conf
-mkdir /home/nacos/logs
+mkdir -p /data/nacos/conf
+mkdir -p /data/nacos/logs
  
 # 设置配置文件
-vim /home/nacos/conf/application.properties
+vim /data/nacos/conf/application.properties
  
 配置项参考
 ##---------
  
 opyright 1999-2018 Alibaba Group Holding Ltd.
-server.servlet.contextPath=/nacos
+server.servlet.context-path=/nacos
 server.port=8848
 spring.datasource.platform=mysql
 ### Count of DB:
